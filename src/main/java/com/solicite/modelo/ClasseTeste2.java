@@ -10,5 +10,5 @@ package com.solicite.modelo;
  * @author Usuario
  */
 public class ClasseTeste2 {
-    
+    private int ko;
 }
