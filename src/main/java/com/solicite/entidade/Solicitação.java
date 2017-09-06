@@ -36,7 +36,6 @@ public class Solicitação implements Serializable{
     @ManyToOne (fetch = FetchType.EAGER)
     private Usuario usuario;
     
-    //TODO - Composição Mudar
     @ManyToOne (fetch = FetchType.EAGER)
     private Categoria categoria;
     
