@@ -21,4 +21,43 @@
     <welcome-file-list>
         <welcome-file>faces/inicial.xhtml</welcome-file>
     </welcome-file-list>
+    
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>file</realm-name>
+            
+        <form-login-config>
+            <form-login-page>/faces/login.xhtml</form-login-page>
+            <form-error-page>/faces/erro.xhtml</form-error-page>
+        </form-login-config>
+    </login-config>
+        
+        <security-role>
+            <role-name>prefeitura</role-name>
+        </security-role>
+        <security-role>
+            <role-name>usuario</role-name>
+        </security-role>
+        
+        <security-constraint>
+            <web-resource-collection>
+                <web-resource-name>Página protegida</web-resource-name>
+                <url-pattern>/faces/inicial.xhtml</url-pattern>
+            </web-resource-collection>
+            
+            <auth-constraint>
+                <role-name>prefeitura</role-name>
+            </auth-constraint>
+        </security-constraint>
+        
+        <security-constraint>
+            <web-resource-collection>
+                <web-resource-name>Página protegida</web-resource-name>
+                <url-pattern>/faces/inicial.xhtml</url-pattern>
+            </web-resource-collection>
+            
+            <auth-constraint>
+                <role-name>usuario</role-name>
+            </auth-constraint>
+        </security-constraint>
 </web-app>
