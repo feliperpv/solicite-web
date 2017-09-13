@@ -3,26 +3,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui" >
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
-        
+
     </h:head>
     <h:body>
-        <p:layout fullPage="true">
-            
-            <p:layoutUnit position="north" size="150">
-                
-            </p:layoutUnit>
- 
-            <p:layoutUnit position="center">
-                <ui:insert name="principal">
-                    
-                    
-                </ui:insert>
-            </p:layoutUnit>
- 
-        </p:layout>
+        <h:form>
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="150">
+                    <h:panelGrid columns="6" cellpadding="10">
+
+                        <h:panelGrid columns="1" cellpadding="5">
+
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="1" cellpadding="5">
+                            <h:outputText value="Nome" />
+                            <h:outputText value="CPF" />
+                            <h:outputText value="Pontos" />
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="1" cellpadding="5">
+                            <p:commandButton value="Criar nova solicitação" action="novasolicitacao"></p:commandButton>
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="1" cellpadding="5">
+                            <p:commandButton value="Visualizar Solicitações" />
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="1" cellpadding="5">
+                            <p:commandButton value="Gerenciar Pontuações" />
+                        </h:panelGrid>
+
+                        <p:commandLink >
+                            <h:outputText value="Sair" />
+                        </p:commandLink>
+
+                    </h:panelGrid>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <ui:insert name="principal" />
+                </p:layoutUnit>
+
+            </p:layout>
+        </h:form>
     </h:body>
 </html>
 
