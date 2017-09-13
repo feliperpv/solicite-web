@@ -1,0 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.solicite.negocio;
+
+import javax.ejb.Local;
+import com.solicite.entidade.Usuario;
+import java.util.List;
+
+/**
+ *
+ * @author Usuario
+ */
+@Local
+public interface IUsuario {
+    
+    boolean criar(Usuario usuario);
+    
+    
+    //boolean alterar (Long id, String novaDescricao);
+    //boolean deletar (Long id);
+    //List<Usuario> consultar();
+    
+}
