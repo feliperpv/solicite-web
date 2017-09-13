@@ -20,16 +20,16 @@ import lombok.Data;
  */
 @Entity
 @Data
-public class Solicitação implements Serializable{
+public class Solicitacao implements Serializable{
         
     @Id @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Long idSolicitação;
+    private Long idSolicitacao;
     
-    private String endereçoSolicitação;
+    private String endereçoSolicitacao;
     
-    private String descriçãoSolicitação;
+    private String descriçãoSolicitacao;
     
-    private String observaçãoSolicitação;
+    private String observaçãoSolicitacao;
     
     private Boolean flagAtivo;
     
@@ -42,7 +42,8 @@ public class Solicitação implements Serializable{
     @ManyToOne (fetch = FetchType.EAGER)
     private Prefeitura prefeitura;
     
-    private Solicitação(){
+    public Solicitacao(){
         super();
     }
+
 }
