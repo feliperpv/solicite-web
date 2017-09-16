@@ -5,8 +5,11 @@
  */
 package com.solicite.modelo;
 
+import com.solicite.entidade.Usuario;
+import com.solicite.negocio.IUsuario;
 import javax.faces.bean.ManagedBean;
 import javax.faces.view.ViewScoped;
+import lombok.Data;
 
 /**
  *
@@ -14,7 +17,17 @@ import javax.faces.view.ViewScoped;
  */
 @ManagedBean
 @ViewScoped
+@Data
 public class UsuarioMB {
+    
+    private Usuario usuario;
+    
+    private IUsuario usuarioBean;
+    
+    public UsuarioMB(){
+        super();
+        usuario = new Usuario();
+    }
     
 }
 

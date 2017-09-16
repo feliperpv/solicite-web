@@ -5,6 +5,9 @@
  */
 package com.solicite.modelo;
 
+import com.solicite.entidade.Prefeitura;
+import com.solicite.negocio.IPrefeitura;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.view.ViewScoped;
 
@@ -15,6 +18,16 @@ import javax.faces.view.ViewScoped;
 @ManagedBean
 @ViewScoped
 public class PrefeituraMB {
+    
+    private Prefeitura prefeitura;
+    
+    @EJB
+    private IPrefeitura prefeituraBean;
+    
+    public PrefeituraMB(){
+        super();
+        prefeitura = new Prefeitura();
+    }
     
 }
 
