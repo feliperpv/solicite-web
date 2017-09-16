@@ -8,6 +8,7 @@ package com.solicite.modelo;
 import com.solicite.entidade.Solicitacao;
 import com.solicite.negocio.ISolicitacao;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.view.ViewScoped;
 import lombok.Data;
 
@@ -16,7 +17,7 @@ import lombok.Data;
  * @author Usuario
  */
 @ManagedBean
-@ViewScoped
+@SessionScoped
 @Data
 public class SolicitacaoMB {
     

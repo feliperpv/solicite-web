@@ -9,6 +9,7 @@ import com.solicite.entidade.Prefeitura;
 import com.solicite.negocio.IPrefeitura;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.view.ViewScoped;
 
 /**
@@ -16,7 +17,7 @@ import javax.faces.view.ViewScoped;
  * @author Usuario
  */
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class PrefeituraMB {
     
     private Prefeitura prefeitura;
@@ -28,6 +29,8 @@ public class PrefeituraMB {
         super();
         prefeitura = new Prefeitura();
     }
+    
+    
     
 }
 
