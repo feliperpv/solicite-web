@@ -5,16 +5,29 @@
  */
 package com.solicite.modelo;
 
+import com.solicite.entidade.Estado;
+import com.solicite.negocio.IEstado;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.view.ViewScoped;
+import lombok.Data;
 
 /**
  *
  * @author Usuario
  */
 @ManagedBean
-@ViewScoped
+@SessionScoped
+@Data
 public class EstadoMB {
     
+    private Estado prefeitura;
+    
+    private IEstado prefeituraBean;
+    
+    public EstadoMB(){
+        super();
+        prefeitura = new Estado();
+    }
 }
 
