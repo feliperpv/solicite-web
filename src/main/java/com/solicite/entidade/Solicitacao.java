@@ -25,11 +25,11 @@ public class Solicitacao implements Serializable{
     @Id @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long idSolicitacao;
     
-    private String endereçoSolicitacao;
+    private String enderecoSolicitacao;
     
-    private String descriçãoSolicitacao;
+    private String descricaoSolicitacao;
     
-    private String observaçãoSolicitacao;
+    private String observacaoSolicitacao;
     
     private Boolean flagAtivo;
     

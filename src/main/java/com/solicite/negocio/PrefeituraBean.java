@@ -22,9 +22,16 @@ public class PrefeituraBean implements IPrefeitura{
     private EntityManager em;
 
     @Override
-    public List<Prefeitura> consultar(Long idEstado) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Prefeitura> consultar() {
+        return em.createQuery("SELECT p FROM Prefeitura p", Prefeitura.class).getResultList();
     }
+
+    @Override
+    public List<Prefeitura> consultarByEstado(Long idEstado) {
+        return em.createQuery("SELECT p FROM Prefeitura p WHERE p.estado.id = " + idEstado, Prefeitura.class).getResultList();
+    }
+    
+    
 
    
 }

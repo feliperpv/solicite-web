@@ -25,9 +25,6 @@ public class Estado implements Serializable{
     
     private String nomeEstado;
     
-    //TODO - ENUM para as Siglas
-    private String siglaUf;
-    
     public Estado(){
         super();
     }
