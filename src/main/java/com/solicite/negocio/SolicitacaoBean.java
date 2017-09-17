@@ -6,7 +6,10 @@
 package com.solicite.negocio;
 
 import com.solicite.entidade.Solicitacao;
+import com.solicite.entidade.Categoria;
+import com.solicite.entidade.Prefeitura;
 import java.util.List;
+import java.util.Optional;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -24,32 +27,28 @@ public class SolicitacaoBean implements ISolicitacao{
     private ICategoria categoriaBean;
     
     private IPrefeitura prefeituraBean;
-    
-    private IUsuario usuarioBean;
-            
-    @Override
-    public boolean persistir(Solicitacao solicitacao) {
-        
-        em.persist(solicitacao);
-        return true;
-        
-    }
 
     @Override
-    public void criar(String endereço, String descrição, Long idCategoria, Long idPrefeitura, Long idUsuario) {
-        Solicitacao solicitacao = new Solicitacao();
-        
-        solicitacao.setEndereçoSolicitacao(endereço);
-        solicitacao.setDescriçãoSolicitacao(descrição);
-        
-             
-        throw new UnsupportedOperationException("Not supported yet.");
-       
+    public void criar(String endereco, String descricao, String observacao, Long idCategoria, Long idPrefeitura) {
+        Prefeitura prefeitura = null;
+        for (Prefeitura p: prefeituraBean.consultar()){
+            if (p.getIdPrefeitura() == idPrefeitura)
+                prefeitura = p;
         }
-
-    @Override
-    public List<Solicitacao> consultar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Categoria categoria = null;
+        for (Categoria c: categoriaBean.consultar()){
+            if (c.getIdCategoria() == idCategoria)
+                categoria = c;
+        }
+        
+        Solicitacao solicitacao = new Solicitacao();
+        solicitacao.setEnderecoSolicitacao(endereco);
+        solicitacao.setDescricaoSolicitacao(descricao);
+        solicitacao.setObservacaoSolicitacao(observacao);
+        solicitacao.setPrefeitura(prefeitura);
+        solicitacao.setCategoria(categoria);
+                             
+        em.persist(solicitacao);
     }
-    
 }

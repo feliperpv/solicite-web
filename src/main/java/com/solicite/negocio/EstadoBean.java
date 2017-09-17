@@ -8,6 +8,8 @@ package com.solicite.negocio;
 import com.solicite.entidade.Estado;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
@@ -15,10 +17,13 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class EstadoBean implements IEstado{
+    
+    @PersistenceContext
+    private EntityManager em;
 
     @Override
     public List<Estado> consultar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return em.createQuery("SELECT e FROM Estado e", Estado.class).getResultList();
     }
     
 }

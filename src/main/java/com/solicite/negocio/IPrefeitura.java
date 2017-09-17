@@ -16,6 +16,7 @@ import javax.ejb.Local;
 @Local
 public interface IPrefeitura {
     
-    List<Prefeitura> consultar(Long idEstado);
+    List<Prefeitura> consultar();
+    List<Prefeitura> consultarByEstado(Long idEstado);
     
 }

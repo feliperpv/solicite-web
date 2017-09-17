@@ -7,6 +7,7 @@ package com.solicite.modelo;
 
 import com.solicite.entidade.Estado;
 import com.solicite.negocio.IEstado;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.view.ViewScoped;
@@ -21,13 +22,12 @@ import lombok.Data;
 @Data
 public class EstadoMB {
     
-    private Estado prefeitura;
+    private String nome;
     
-    private IEstado prefeituraBean;
+    private IEstado estadoBean;
     
-    public EstadoMB(){
-        super();
-        prefeitura = new Estado();
+    public List<Estado> consultar(){
+        return estadoBean.consultar();
     }
 }
 

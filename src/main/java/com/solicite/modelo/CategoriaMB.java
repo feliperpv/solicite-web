@@ -7,6 +7,7 @@ package com.solicite.modelo;
 
 import com.solicite.entidade.Categoria;
 import com.solicite.negocio.ICategoria;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -18,14 +19,13 @@ import lombok.Data;
 @Data
 public class CategoriaMB {
     
-    private Categoria categoria;
+    private String nomeCategoria;
     
     @EJB
     private ICategoria categoriaBean;
     
-    public CategoriaMB(){
-        super();
-        categoria = new Categoria();
+    public List<Categoria> consultar(){
+        return categoriaBean.consultar();
     }
        
 }
