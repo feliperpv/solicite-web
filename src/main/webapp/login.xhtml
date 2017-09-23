@@ -8,17 +8,15 @@
     </h:head>
     <h:body>
         <form action="j_security_check" method="POST">
-            <p:panel>
-                <p:panelGrid columns="2">
-                    <p:outputLabel value="Usuario: "></p:outputLabel>
+            <p:panelGrid columns="2">
+                    <p:outputLabel value="Usuário: "></p:outputLabel>
                     <p:inputText id="j_username" required="true"></p:inputText>
 
                     <p:outputLabel value="Senha: "></p:outputLabel>
                     <p:password id="j_password"></p:password>
 
                     <h:commandButton type="submit" value="Login"></h:commandButton>
-                </p:panelGrid>
-            </p:panel> 
+            </p:panelGrid>
         </form>
     </h:body>
 </html>
