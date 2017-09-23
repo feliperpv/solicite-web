@@ -25,6 +25,8 @@ public class Estado implements Serializable{
     
     private String nomeEstado;
     
+    private String siglaUf;
+    
     public Estado(){
         super();
     }

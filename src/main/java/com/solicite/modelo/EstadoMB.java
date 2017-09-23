@@ -23,6 +23,8 @@ import lombok.Data;
 public class EstadoMB {
     
     private String nome;
+        
+    private String siglaUf;
     
     private IEstado estadoBean;
     
