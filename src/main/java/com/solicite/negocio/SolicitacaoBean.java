@@ -10,6 +10,7 @@ import com.solicite.entidade.Categoria;
 import com.solicite.entidade.Prefeitura;
 import java.util.List;
 import java.util.Optional;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -24,8 +25,10 @@ public class SolicitacaoBean implements ISolicitacao{
     @PersistenceContext
     private EntityManager em;
     
+    @EJB
     private ICategoria categoriaBean;
     
+    @EJB
     private IPrefeitura prefeituraBean;
 
     @Override

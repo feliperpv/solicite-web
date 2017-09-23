@@ -5,10 +5,12 @@
  */
 package com.solicite.modelo;
 
+import com.solicite.entidade.Categoria;
 import com.solicite.entidade.Solicitacao;
 import com.solicite.negocio.ICategoria;
 import com.solicite.negocio.IPrefeitura;
 import com.solicite.negocio.ISolicitacao;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -59,6 +61,10 @@ public class SolicitacaoMB {
             System.out.println(e);
             return "erro";
         }
+    }
+    
+    public List<Categoria> consultarCategorias() {
+        return categoriaBean.consultar();
     }
 }
 
