@@ -12,28 +12,31 @@
                 <h:panelGrid columns="2" cellpadding="10">
 
                     <h:outputText value="Categoria" />
-                    <p:selectOneMenu id="categoria" value="" style="width:125px">
-                        <f:selectItem itemLabel="Select One" itemValue="" />   
+                    <p:selectOneMenu id="categoria" value="" style="width:300px">
+                        <f:selectItem itemLabel="Selecione a categoria" itemValue="" />
+                        <f:selectItem itemLabel="Categoria 1" itemValue="Categoria 1" />
+                        <f:selectItem itemLabel="Categoria 2" itemValue="Categoria 2" />
                     </p:selectOneMenu>
 
                     <h:outputText value="Estado" />
-                    <p:selectOneMenu id="estado" value="" style="width:125px">
-                        <f:selectItem itemLabel="Select One" itemValue="" />    
+                    <p:selectOneMenu id="estado" value="" style="width:300px">
+                        <f:selectItem itemLabel="Selecione o estado" itemValue="" />
+                        <f:selectItem itemLabel="Estado 1" itemValue="Estado 1" />
+                        <f:selectItem itemLabel="Estado 2" itemValue="Estado 2" />
                     </p:selectOneMenu>
 
                     <h:outputText value="Prefeitura" />
-                    <p:selectOneMenu id="prefeitura" value="" style="width:125px">
-                        <f:selectItem itemLabel="Select One" itemValue="" />
+                    <p:selectOneMenu id="prefeitura" value="" style="width:300px">
+                        <f:selectItem itemLabel="Selecione a prefeitura" itemValue="" />
+                        <f:selectItem itemLabel="Prefeitura 1" itemValue="Prefeitura 1" />
+                        <f:selectItem itemLabel="Prefeitura 2" itemValue="Prefeitura 2" />
                     </p:selectOneMenu>
 
                     <h:outputText value="Endereço" />
-                    <p:inputText id="endereco"/>
+                    <p:inputText id="endereco" style="width:400px" />
 
                     <h:outputText value="Descrição" />
-                    <p:inputTextarea id="descricao" rows="10" cols="50"  queryDelay="750" minQueryLength="4" />
-
-                    <h:outputText value="Observações" />
-                    <p:inputText id="observacoes"/>
+                    <p:inputTextarea id="descricao" queryDelay="10" minQueryLength="4" style="width:400px; height: 200px"/>
                     
                     <p:commandButton value="Adicionar"></p:commandButton>
                 </h:panelGrid>
