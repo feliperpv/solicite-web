@@ -19,7 +19,8 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/inicial.xhtml</welcome-file>
+        <welcome-file>faces/usuario/inicial.xhtml</welcome-file>
+        <welcome-file>faces/prefeitura/inicialPrefeitura.xhtml</welcome-file>
     </welcome-file-list>
     
     <login-config>
@@ -42,7 +43,8 @@
         <security-constraint>
             <web-resource-collection>
                 <web-resource-name>Página protegida</web-resource-name>
-                <url-pattern>/faces/inicial.xhtml</url-pattern>
+               <!-- <url-pattern>/faces/inicial.xhtml</url-pattern> -->
+                <url-pattern>/faces/prefeitura/*</url-pattern>
             </web-resource-collection>
             
             <auth-constraint>
@@ -53,7 +55,8 @@
         <security-constraint>
             <web-resource-collection>
                 <web-resource-name>Página protegida</web-resource-name>
-                <url-pattern>/faces/inicial.xhtml</url-pattern>
+                <!--<url-pattern>/faces/inicial.xhtml</url-pattern> -->
+                <url-pattern>/faces/usuario/*</url-pattern>
             </web-resource-collection>
             
             <auth-constraint>
