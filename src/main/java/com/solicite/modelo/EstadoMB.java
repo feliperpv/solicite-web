@@ -8,24 +8,22 @@ package com.solicite.modelo;
 import com.solicite.entidade.Estado;
 import com.solicite.negocio.IEstado;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.view.ViewScoped;
 import lombok.Data;
 
-/**
- *
- * @author Usuario
- */
 @ManagedBean
 @SessionScoped
 @Data
 public class EstadoMB {
     
-    private String nome;
+    private String nomeEstado;
         
     private String siglaUf;
     
+    @EJB
     private IEstado estadoBean;
     
     public List<Estado> consultar(){

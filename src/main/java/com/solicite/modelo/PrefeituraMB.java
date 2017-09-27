@@ -27,7 +27,6 @@ public class PrefeituraMB {
     
     @EJB
     private IPrefeitura prefeituraBean;
-    private List<Prefeitura> prefeituras;
     
     @EJB
     private IEstado estadoBean;
@@ -42,13 +41,8 @@ public class PrefeituraMB {
         return prefeituraBean.consultar();
     }
     
-    public List<Prefeitura> consultarByEstado(){
-        
-        if (idEstado != null && idEstado != 0) {
-            prefeituras = this.prefeituraBean.consultarByEstado(idEstado);
-        } 
-        
-        return prefeituras;
+    public List<Prefeitura> consultarByEstado(Long idEstado){
+        return prefeituraBean.consultarByEstado(idEstado);
     }
 }
 
