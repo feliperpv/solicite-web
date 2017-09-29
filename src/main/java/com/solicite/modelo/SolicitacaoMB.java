@@ -6,10 +6,14 @@
 package com.solicite.modelo;
 
 import com.solicite.entidade.Categoria;
+import com.solicite.entidade.Estado;
 import com.solicite.entidade.Solicitacao;
+import com.solicite.entidade.Prefeitura;
 import com.solicite.negocio.ICategoria;
+import com.solicite.negocio.IEstado;
 import com.solicite.negocio.IPrefeitura;
 import com.solicite.negocio.ISolicitacao;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -37,14 +41,19 @@ public class SolicitacaoMB {
     @EJB
     private IPrefeitura prefeituraBean;
     private Long idPrefeitura;
+    private List<Prefeitura> prefeituras;
     
     @EJB
     private ICategoria categoriaBean;
     private Long idCategoria;
-            
+    
+    @EJB
+    private IEstado estadoBean;
+    private Long idEstado;
+    
+               
     public SolicitacaoMB(){
         super();
-        solicitacao = new Solicitacao();
     }
     
     public String criar(){
@@ -65,6 +74,23 @@ public class SolicitacaoMB {
     
     public List<Categoria> consultarCategorias() {
         return categoriaBean.consultar();
+    }
+    
+    public List<Estado> consultarEstados(){
+        return estadoBean.consultar();
+    }
+    
+    public List<Prefeitura> consultarPrefeituras(){
+        return prefeituraBean.consultar();
+    }
+    
+    public void onMudaEstado() {
+
+        if (idEstado != null && idEstado != 0) {
+            prefeituras = this.prefeituraBean.consultarByEstado(idEstado);
+        } else {
+            prefeituras = new ArrayList<>();
+        }
     }
 }
 

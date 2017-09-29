@@ -14,7 +14,7 @@
             <p:layout fullPage="true">
 
                 <p:layoutUnit position="north" size="150">
-                    <h:panelGrid columns="6" cellpadding="10">
+                    <h:panelGrid columns="7" cellpadding="10">
 
                         <h:panelGrid columns="1" cellpadding="5">
                             <h:graphicImage library="images" name="user.png" height="90px" width="90px"></h:graphicImage>
@@ -25,13 +25,17 @@
                             <h:outputText value="CPF" />
                             <h:outputText value="Pontos" />
                         </h:panelGrid>
-
+                        
+                        <h:panelGrid columns="1" cellpadding="5">
+                            <p:commandButton value="Home" ></p:commandButton>
+                        </h:panelGrid>
+                        
                         <h:panelGrid columns="1" cellpadding="5">
                             <p:commandButton value="Criar nova solicitação" action="novasolicitacao"></p:commandButton>
                         </h:panelGrid>
 
                         <h:panelGrid columns="1" cellpadding="5">
-                            <p:commandButton value="Visualizar Solicitações" />
+                            <p:commandButton value="Visualizar Solicitações" action="solicitacoesusuario"/>
                         </h:panelGrid>
 
                         <h:panelGrid columns="1" cellpadding="5">

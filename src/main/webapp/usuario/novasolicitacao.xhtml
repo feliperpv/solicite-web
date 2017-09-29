@@ -11,30 +11,27 @@
             <h:form>
                 <h:panelGrid columns="2" cellpadding="10">
 
-                    <h:outputText value="Categoria" />
+                    <h:outputText value="Categoria:" />
                     <p:selectOneMenu id="cetegoriaList" value="#{solicitacaoMB.idCategoria}" style="width:300px">
-                        <f:selectItems value="#{solicitacaoMB.consultarCategorias()}" var="categoria" itemLabel="#{categoria.nomeCategoria}" itemValue="#{categoria.idCategoria}"></f:selectItems>
+                        <f:selectItems  value="#{solicitacaoMB.consultarCategorias()}" var="categoria" itemLabel="#{categoria.nomeCategoria}" itemValue="#{categoria.idCategoria}"></f:selectItems>
                     </p:selectOneMenu>
 
-                    <h:outputText value="Estado" />
-                    <p:selectOneMenu id="estadoList" value="" style="width:300px">
-                        <f:selectItem itemLabel="Selecione o estado" itemValue="" />
-                        <f:selectItem itemLabel="Estado 1" itemValue="Estado 1" />
-                        <f:selectItem itemLabel="Estado 2" itemValue="Estado 2" />
+                    <h:outputText value="Estado:" />
+                    <p:selectOneMenu value="#{solicitacaoMB.idEstado}" style="width:300px">
+                        <p:ajax listener="#{solicitacaoMB.onMudaEstado()}" update="prefeituraList" />
+                        <f:selectItems value="#{solicitacaoMB.consultarEstados()}" var="estado" itemLabel="#{estado.nomeEstado}" itemValue="#{estado.idEstado}"></f:selectItems>
                     </p:selectOneMenu>
-                           
-                    <h:outputText value="Prefeitura" />
-                    <p:selectOneMenu id="prefeitura" value="" style="width:300px">
-                        <f:selectItem itemLabel="Selecione a prefeitura" itemValue="" />
-                        <f:selectItem itemLabel="Prefeitura 1" itemValue="Prefeitura 1" />
-                        <f:selectItem itemLabel="Prefeitura 2" itemValue="Prefeitura 2" />
+                    
+                    <h:outputText value="Prefeitura:" />
+                    <p:selectOneMenu id="prefeituraList" value="#{solicitacaoMB.idPrefeitura}" style="width:300px">
+                        <f:selectItems value="#{solicitacaoMB.prefeituras}" var="prefeitura" itemLabel="#{prefeitura.nomePrefeitura}" itemValue="#{prefeitura.idPrefeitura}"></f:selectItems>
                     </p:selectOneMenu>
-
-                    <h:outputText value="Endereço" />
+                   
+                    <h:outputText value="Endereço:" />
                     <p:inputText id="endereco" value="#{solicitacaoMB.endereco}" style="width:400px" />
 
-                    <h:outputText value="Descrição" />
-                    <p:inputTextarea id="descricao" value="#{solicitacaoMB.descricao}" queryDelay="10" minQueryLength="4" style="width:400px; height: 200px"/>
+                    <h:outputText value="Descrição:" />
+                    <p:inputTextarea id="descricao" value="#{solicitacaoMB.descricao}" queryDelay="10" minQueryLength="4" style="width:400px; height: 150px"/>
                     
                     <p:commandButton value="Adicionar"></p:commandButton>
                 </h:panelGrid>
