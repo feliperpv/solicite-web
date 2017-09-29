@@ -13,14 +13,14 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Usuario
+ * @author Usuario 
  */
 @Stateless
 public class PrefeituraBean implements IPrefeitura{
     
     @PersistenceContext
     private EntityManager em;
-
+    
     @Override
     public List<Prefeitura> consultar() {
         return em.createQuery("SELECT p FROM Prefeitura p", Prefeitura.class).getResultList();
