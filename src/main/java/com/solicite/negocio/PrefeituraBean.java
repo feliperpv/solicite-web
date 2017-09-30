@@ -28,7 +28,7 @@ public class PrefeituraBean implements IPrefeitura{
 
     @Override
     public List<Prefeitura> consultarByEstado(Long idEstado) {
-        return em.createQuery("SELECT p FROM Prefeitura p WHERE p.estado.id = " + idEstado, Prefeitura.class).getResultList();
+        return em.createQuery("SELECT p FROM Prefeitura p WHERE p.estado.idEstado = " + idEstado, Prefeitura.class).getResultList();
     }
     
     

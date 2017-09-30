@@ -16,8 +16,10 @@ import com.solicite.negocio.ISolicitacao;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import lombok.Data;
 
@@ -51,12 +53,7 @@ public class SolicitacaoMB {
     private IEstado estadoBean;
     private Long idEstado;
     
-               
-    public SolicitacaoMB(){
-        super();
-    }
-    
-    public String criar(){
+    public void criar(){
         
         try{
             solicitacaoBean.criar(
@@ -65,10 +62,8 @@ public class SolicitacaoMB {
                     this.getObservacao(),
                     this.getIdPrefeitura(),
                     this.getIdCategoria());
-            return "criado";
         } catch (Exception e) {
             System.out.println(e);
-            return "erro";
         }
     }
     
@@ -79,11 +74,7 @@ public class SolicitacaoMB {
     public List<Estado> consultarEstados(){
         return estadoBean.consultar();
     }
-    
-    public List<Prefeitura> consultarPrefeituras(){
-        return prefeituraBean.consultar();
-    }
-    
+
     public void onMudaEstado() {
 
         if (idEstado != null && idEstado != 0) {
@@ -91,6 +82,12 @@ public class SolicitacaoMB {
         } else {
             prefeituras = new ArrayList<>();
         }
+    }
+    
+    public void mensagemSucesso() {
+        FacesContext context = FacesContext.getCurrentInstance();
+         
+        context.addMessage(null, new FacesMessage("Sucesso!",  "Solicitação criada com sucesso!") );
     }
 }
 

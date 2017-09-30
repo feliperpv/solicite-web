@@ -22,20 +22,13 @@ import lombok.Data;
 @SessionScoped
 @Data
 public class PrefeituraMB {
-    
-    private Prefeitura prefeitura;
-    
+       
     @EJB
     private IPrefeitura prefeituraBean;
     
     @EJB
     private IEstado estadoBean;
     private Long idEstado;
-    
-    public PrefeituraMB(){
-        super();
-        prefeitura = new Prefeitura();
-    }
     
     public List<Prefeitura> consultar(){
         return prefeituraBean.consultar();

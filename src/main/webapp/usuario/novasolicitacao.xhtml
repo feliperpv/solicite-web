@@ -9,11 +9,13 @@
     <ui:composition template="template.xhtml">
         <ui:define name="principal">
             <h:form>
+                <p:growl id="growl" showDetail="true" sticky="true" /> 
+                
                 <h:panelGrid columns="2" cellpadding="10">
 
                     <h:outputText value="Categoria:" />
                     <p:selectOneMenu id="cetegoriaList" value="#{solicitacaoMB.idCategoria}" style="width:300px">
-                        <f:selectItems  value="#{solicitacaoMB.consultarCategorias()}" var="categoria" itemLabel="#{categoria.nomeCategoria}" itemValue="#{categoria.idCategoria}"></f:selectItems>
+                        <f:selectItems value="#{solicitacaoMB.consultarCategorias()}" var="categoria" itemLabel="#{categoria.nomeCategoria}" itemValue="#{categoria.idCategoria}"></f:selectItems>
                     </p:selectOneMenu>
 
                     <h:outputText value="Estado:" />
@@ -21,20 +23,21 @@
                         <p:ajax listener="#{solicitacaoMB.onMudaEstado()}" update="prefeituraList" />
                         <f:selectItems value="#{solicitacaoMB.consultarEstados()}" var="estado" itemLabel="#{estado.nomeEstado}" itemValue="#{estado.idEstado}"></f:selectItems>
                     </p:selectOneMenu>
-                    
+                                        
                     <h:outputText value="Prefeitura:" />
                     <p:selectOneMenu id="prefeituraList" value="#{solicitacaoMB.idPrefeitura}" style="width:300px">
                         <f:selectItems value="#{solicitacaoMB.prefeituras}" var="prefeitura" itemLabel="#{prefeitura.nomePrefeitura}" itemValue="#{prefeitura.idPrefeitura}"></f:selectItems>
                     </p:selectOneMenu>
                    
                     <h:outputText value="Endereço:" />
-                    <p:inputText id="endereco" value="#{solicitacaoMB.endereco}" style="width:400px" />
+                    <p:inputText id="endereco" value="#{solicitacaoMB.endereco}" style="width:400px"/>
 
                     <h:outputText value="Descrição:" />
                     <p:inputTextarea id="descricao" value="#{solicitacaoMB.descricao}" queryDelay="10" minQueryLength="4" style="width:400px; height: 150px"/>
                     
-                    <p:commandButton value="Adicionar"></p:commandButton>
+                    <p:commandButton value="Adicionar" ajax="false" action="#{solicitacaoMB.criar()}" actionListener="#{solicitacaoMB.mensagemSucesso}" update="growl"></p:commandButton>
                 </h:panelGrid>
+
             </h:form>
         </ui:define>
     </ui:composition>
