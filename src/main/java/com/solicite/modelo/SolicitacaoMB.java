@@ -53,7 +53,7 @@ public class SolicitacaoMB {
     private IEstado estadoBean;
     private Long idEstado;
     
-    public void criar(){
+    public String criar(){
         
         try{
             solicitacaoBean.criar(
@@ -62,8 +62,10 @@ public class SolicitacaoMB {
                     this.getObservacao(),
                     this.getIdPrefeitura(),
                     this.getIdCategoria());
+            return "criado";
         } catch (Exception e) {
             System.out.println(e);
+            return "erro";
         }
     }
     
