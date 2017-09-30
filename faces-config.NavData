@@ -3,14 +3,14 @@
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
         <Node id="login.xhtml" x="445" y="132" zoom="true"/>
-        <Node id="prefeitura/inicialPrefeitura.xhtml" x="548" y="331" zoom="true"/>
-        <Node id="usuario/inicial.xhtml" x="109" y="323" zoom="true"/>
+        <Node id="prefeitura/inicialPrefeitura.xhtml" x="765" y="276" zoom="true"/>
+        <Node id="usuario/inicial.xhtml" x="245" y="250" zoom="true"/>
+        <Node id="prefeitura/pendentes.xhtml" x="799" y="392" zoom="true"/>
         <Node id="prefeitura/templatePrefeitura.xhtml" x="23" y="63" zoom="true"/>
-        <Node id="prefeitura/pendentes.xhtml" x="570" y="497" zoom="true"/>
-        <Node id="usuario/solicitacoesusuario.xhtml" x="257" y="451" zoom="true"/>
+        <Node id="usuario/solicitacoesusuario.xhtml" x="399" y="401" zoom="true"/>
         <Node id="erro.xhtml" x="448" y="26" zoom="true"/>
         <Node id="usuario/template.xhtml" x="53" y="31" zoom="true"/>
-        <Node id="usuario/novasolicitacao.xhtml" x="-50" y="487" zoom="true"/>
+        <Node id="usuario/novasolicitacao.xhtml" x="38" y="396" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>
