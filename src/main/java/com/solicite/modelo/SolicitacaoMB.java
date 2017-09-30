@@ -67,6 +67,10 @@ public class SolicitacaoMB {
         }
     }
     
+    public List<Solicitacao> consultarSolicitacoes(){
+        return solicitacaoBean.consultar();
+    }
+    
     public List<Categoria> consultarCategorias() {
         return categoriaBean.consultar();
     }
@@ -89,5 +93,6 @@ public class SolicitacaoMB {
          
         context.addMessage(null, new FacesMessage("Sucesso!",  "Solicitação criada com sucesso!") );
     }
+   
 }
 
