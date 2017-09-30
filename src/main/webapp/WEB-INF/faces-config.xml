@@ -50,6 +50,10 @@
             <from-outcome>solicitacoes</from-outcome>
             <to-view-id>/usuario/solicitacoesusuario.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>produtoseservicos</from-outcome>
+            <to-view-id>/usuario/produtoseservicos.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/prefeitura/pendentes.xhtml</from-view-id>
@@ -76,12 +80,35 @@
             <from-outcome>solicitacoes</from-outcome>
             <to-view-id>/usuario/solicitacoesusuario.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>produtoseservicos</from-outcome>
+            <to-view-id>/usuario/produtoseservicos.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/usuario/solicitacoesusuario.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>inicial</from-outcome>
             <to-view-id>/usuario/inicial.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>novasolicitacao</from-outcome>
+            <to-view-id>/usuario/novasolicitacao.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>produtoseservicos</from-outcome>
+            <to-view-id>/usuario/produtoseservicos.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/usuario/produtoseservicos.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>inicial</from-outcome>
+            <to-view-id>/usuario/inicial.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>solicitacoes</from-outcome>
+            <to-view-id>/usuario/solicitacoesusuario.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>novasolicitacao</from-outcome>

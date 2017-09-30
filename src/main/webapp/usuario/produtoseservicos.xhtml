@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <ui:composition template="template.xhtml">
+        <ui:define name="principal">
+            <h:form>
+                <h:panelGrid columns="4" cellpadding="10" style="align-content: center">
+                    <p:panel header="Garrafa Purific">
+                        <p:panelGrid columns="2">
+                            <f:facet name="header">
+                                <h:graphicImage library="images" name="garrafaPurific.jpg" height="100px" width="100px" />
+                            </f:facet>
+
+                            <h:outputText value="Empresa:" />
+                            <h:outputText value="Purific" />
+
+                            <h:outputText value="Pontos:" />
+                            <h:outputText value="50" />
+                        </p:panelGrid>
+
+                        <p:commandButton value="Aquirir" ajax="false" action="principal"></p:commandButton>
+                    </p:panel>
+
+                    <p:panel header="Seção de Massagem">
+                        <p:panelGrid columns="2">
+                            <f:facet name="header">
+                                <h:graphicImage library="images" name="massagem.jpg" height="100px" width="100px" />
+                            </f:facet>
+
+                            <h:outputText value="Empresa:" />
+                            <h:outputText value="Estética e Spa" />
+
+                            <h:outputText value="Pontos:" />
+                            <h:outputText value="100" />
+                        </p:panelGrid>
+
+                        <p:commandButton value="Aquirir" ajax="false" action="principal"></p:commandButton>
+                    </p:panel>
+
+                    <p:panel header="Iphone 7 Plus">
+                        <p:panelGrid columns="2">
+                            <f:facet name="header">
+                                <h:graphicImage library="images" name="iphone7plus.jpg" height="100px" width="100px" />
+                            </f:facet>
+
+                            <h:outputText value="Empresa:" />
+                            <h:outputText value="Loja X" />
+
+                            <h:outputText value="Pontos:" />
+                            <h:outputText value="2.400" />
+                        </p:panelGrid>
+
+                        <p:commandButton value="Aquirir" ajax="false" action="principal"></p:commandButton>
+                    </p:panel>
+
+                    <p:panel header="Desconto de 20% em sapatos">
+                        <p:panelGrid columns="2">
+                            <f:facet name="header">
+                                <h:graphicImage library="images" name="desconto.jpg" height="100px" width="100px" />
+                            </f:facet>
+
+                            <h:outputText value="Empresa:" />
+                            <h:outputText value="Loja Calçados" />
+
+                            <h:outputText value="Pontos:" />
+                            <h:outputText value="20" />
+                        </p:panelGrid>
+
+                        <p:commandButton value="Aquirir" ajax="false" action="principal"></p:commandButton>
+                    </p:panel>
+
+                    <p:panel header="Moto G5">
+                        <p:panelGrid columns="2">
+                            <f:facet name="header">
+                                <h:graphicImage library="images" name="motog.jpg" height="100px" width="100px" />
+                            </f:facet>
+
+                            <h:outputText value="Empresa:" />
+                            <h:outputText value="Eletrônicos e Serviços" />
+
+                            <h:outputText value="Pontos:" />
+                            <h:outputText value="1.500" />
+                        </p:panelGrid>
+
+                        <p:commandButton value="Aquirir" ajax="false" action="principal"></p:commandButton>
+                    </p:panel>
+
+                    <p:panel header="Conserto de freios">
+                        <p:panelGrid columns="2">
+                            <f:facet name="header">
+                                <h:graphicImage library="images" name="freio.jpg" height="100px" width="100px" />
+                            </f:facet>
+
+                            <h:outputText value="Empresa:" />
+                            <h:outputText value="Mecânica do Zé" />
+
+                            <h:outputText value="Pontos:" />
+                            <h:outputText value="100" />
+                        </p:panelGrid>
+
+                        <p:commandButton value="Aquirir" ajax="false" action="principal"></p:commandButton>
+                    </p:panel>
+                </h:panelGrid>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
