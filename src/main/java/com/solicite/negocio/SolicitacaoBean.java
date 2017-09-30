@@ -54,4 +54,9 @@ public class SolicitacaoBean implements ISolicitacao{
                              
         em.persist(solicitacao);
     }
+
+    @Override
+    public List<Solicitacao> consultar() {
+         return em.createQuery("SELECT s FROM Solicitacao s", Solicitacao.class).getResultList();
+    }
 }
