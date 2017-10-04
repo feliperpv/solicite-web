@@ -100,5 +100,9 @@ public class SolicitacaoMB {
         return solicitacaoBean.setFlagAceitar(idSolicitacao);
     }
     
+    public List<Solicitacao> consultarSolicitacoesAceitas(){
+        return solicitacaoBean.consultarAceitas();
+    }
+    
 }
 
