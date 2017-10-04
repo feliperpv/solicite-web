@@ -18,6 +18,8 @@ public interface ISolicitacao {
     
     public void criar(String endereco, String descricao, String observacao, Long idCategoria, Long idPrefeitura);
     public List<Solicitacao> consultar();
+    public List<Solicitacao> consultarAceitas();
     public int setFlagAceitar(Long idSolicitacao);
+    
 
 }

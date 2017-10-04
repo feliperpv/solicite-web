@@ -34,7 +34,7 @@
                 <p:tab title="Aceitas">
                     <h:form>
                         <p:panel header="Solicitações Aceitas" style="margin-bottom:20px">
-                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}">
+                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesAceitas()}">
 
                                 <p:column headerText="Código" style="width:60px; text-align: center">
                                     <h:outputText value="#{solicitacao.idSolicitacao}"/>
