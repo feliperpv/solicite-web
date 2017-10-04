@@ -67,7 +67,12 @@ public class SolicitacaoBean implements ISolicitacao{
     }
     
     @Override
-    public List<Solicitacao> consultarSolicitacoesRecusadas(){
+    public List<Solicitacao> consultarAceitas(){
+        return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo = 1", Solicitacao.class).getResultList();
+    }
+    
+    @Override
+    public List<Solicitacao> consultarRecusadas(){
         return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo = 0", Solicitacao.class).getResultList();
     }
     

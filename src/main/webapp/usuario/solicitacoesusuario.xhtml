@@ -36,7 +36,7 @@
                 <p:tab title="Aceitas">
                     <h:form>
                         <p:panel header="Solicitações Aceitas" style="margin-bottom:20px">
-                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}"
+                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesAceitas()}"
                                          paginator="true" rows="5"
                                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
@@ -59,7 +59,7 @@
 
                 <p:tab title="Recusadas">
                     <h:form>
-                        <p:panel header="Solicitações Rejeitadas" style="margin-bottom:20px">
+                        <p:panel header="Solicitações Recusadas" style="margin-bottom:20px">
                             <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesRecusadas()}"
                                          paginator="true" rows="5"
                                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
