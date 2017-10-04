@@ -27,10 +27,12 @@
                                     <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
                                 </p:column>
                                 <p:column headerText="Ações" style="width:205px">
-                                    <p:commandButton value="Aceitar" ajax="false" action="#" style="width:100px; background-color: lime" ></p:commandButton>
+                                    <p:commandButton value="Aceitar" ajax="false" action="#{solicitacaoMB.setFlagAtivo(solicitacao.idSolicitacao)}" style="width:100px; background-color: lime" ></p:commandButton>
                                     <p:commandButton value="Recusar" ajax="false" action="#" style="width:100px; background-color: red"></p:commandButton>
                                 </p:column>
+
                             </p:dataTable>
+
                         </p:panel>
                     </h:form>
                 </p:tab>
