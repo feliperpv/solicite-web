@@ -12,7 +12,9 @@
                 <p:tab title="Pendentes">
                     <h:form>
                         <p:panel header="Solicitações Pendentes" style="margin-bottom:20px">
-                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}">
+                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}"
+                                         paginator="true" rows="5"
+                                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
                                 <p:column headerText="Código" style="width:60px; text-align: center">
                                     <h:outputText value="#{solicitacao.idSolicitacao}"/>
@@ -34,7 +36,9 @@
                 <p:tab title="Aceitas">
                     <h:form>
                         <p:panel header="Solicitações Aceitas" style="margin-bottom:20px">
-                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesAceitas()}">
+                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesAceitas()}"
+                                         paginator="true" rows="5"
+                                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
                                 <p:column headerText="Código" style="width:60px; text-align: center">
                                     <h:outputText value="#{solicitacao.idSolicitacao}"/>
@@ -56,7 +60,9 @@
                 <p:tab title="Recusadas">
                     <h:form>
                         <p:panel header="Solicitações Rejeitadas" style="margin-bottom:20px">
-                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}">
+                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}"
+                                         paginator="true" rows="5"
+                                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
                                 <p:column headerText="Código" style="width:60px; text-align: center">
                                     <h:outputText value="#{solicitacao.idSolicitacao}"/>

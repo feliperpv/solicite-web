@@ -3,15 +3,15 @@
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
         <Node id="login.xhtml" x="445" y="132" zoom="true"/>
-        <Node id="usuario/inicial.xhtml" x="127" y="207" zoom="false"/>
-        <Node id="prefeitura/pendentes.xhtml" x="570" y="497" zoom="true"/>
-        <Node id="usuario/solicitacoesusuario.xhtml" x="267" y="497" zoom="true"/>
-        <Node id="erro.xhtml" x="448" y="26" zoom="true"/>
-        <Node id="prefeitura/templateprefeitura.xhtml" x="650" y="150" zoom="true"/>
-        <Node id="prefeitura/inicialprefeitura.xhtml" x="150" y="150" zoom="true"/>
-        <Node id="usuario/templateusuario.xhtml" x="400" y="150" zoom="true"/>
-        <Node id="usuario/produtoseservicos.xhtml" x="150" y="300" zoom="true"/>
-        <Node id="usuario/novasolicitacao.xhtml" x="7" y="405" zoom="true"/>
+        <Node id="usuario/inicial.xhtml" x="245" y="250" zoom="true"/>
+        <Node id="prefeitura/pendentes.xhtml" x="799" y="392" zoom="true"/>
+        <Node id="usuario/solicitacoesusuario.xhtml" x="583" y="664" zoom="true"/>
+        <Node id="prefeitura/templateprefeitura.xhtml" x="683" y="65" zoom="true"/>
+        <Node id="erro.xhtml" x="331" y="23" zoom="true"/>
+        <Node id="usuario/templateusuario.xhtml" x="772" y="25" zoom="true"/>
+        <Node id="prefeitura/inicialprefeitura.xhtml" x="720" y="214" zoom="true"/>
+        <Node id="usuario/produtoseservicos.xhtml" x="221" y="876" zoom="true"/>
+        <Node id="usuario/novasolicitacao.xhtml" x="-36" y="609" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>
