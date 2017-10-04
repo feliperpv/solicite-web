@@ -96,5 +96,9 @@ public class SolicitacaoMB {
         context.addMessage(null, new FacesMessage("Sucesso!",  "Solicitação criada com sucesso!") );
     }
    
+    public int setFlagAtivo(Long idSolicitacao){
+        return solicitacaoBean.setFlagAceitar(idSolicitacao);
+    }
+    
 }
 
