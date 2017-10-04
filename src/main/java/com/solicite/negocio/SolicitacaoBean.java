@@ -14,6 +14,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import org.eclipse.persistence.jpa.jpql.parser.IdentificationVariableBNF;
 
 /**
  *
@@ -58,5 +59,10 @@ public class SolicitacaoBean implements ISolicitacao{
     @Override
     public List<Solicitacao> consultar() {
          return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo IS NULL", Solicitacao.class).getResultList();
+    }
+    
+    @Override
+    public int setFlagAceitar(Long idSolicitacao){
+        return em.createQuery("UPDATE Solicitacao s SET s.flagAtivo = 1 WHERE s.idSolicitacao = " + idSolicitacao, Solicitacao.class).executeUpdate();
     }
 }
