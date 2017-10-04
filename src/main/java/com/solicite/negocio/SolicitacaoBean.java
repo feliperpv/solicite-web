@@ -70,4 +70,14 @@ public class SolicitacaoBean implements ISolicitacao{
     public List<Solicitacao> consultarAceitas(){
         return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo = 1", Solicitacao.class).getResultList();
     }
+    
+    @Override
+    public List<Solicitacao> consultarRecusadas(){
+        return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo = 0", Solicitacao.class).getResultList();
+    }
+    
+    @Override
+    public int setFlagRecusar(Long idSolicitacao){
+        return em.createQuery("UPDATE Solicitacao s SET s.flagAtivo = 0 WHERE s.idSolicitacao = " + idSolicitacao, Solicitacao.class).executeUpdate();
+    }
 }

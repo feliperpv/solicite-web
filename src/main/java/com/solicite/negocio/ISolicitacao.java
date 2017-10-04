@@ -20,6 +20,6 @@ public interface ISolicitacao {
     public List<Solicitacao> consultar();
     public List<Solicitacao> consultarAceitas();
     public int setFlagAceitar(Long idSolicitacao);
-    
-
+    public List<Solicitacao> consultarRecusadas();
+    public int setFlagRecusar(Long idSolicitacao);
 }

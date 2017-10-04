@@ -103,6 +103,14 @@ public class SolicitacaoMB {
     public List<Solicitacao> consultarSolicitacoesAceitas(){
         return solicitacaoBean.consultarAceitas();
     }
+
+    public List<Solicitacao> consultarSolicitacoesRecusadas(){
+        return solicitacaoBean.consultarRecusadas();
+    }
+        
+    public int setFlagRecusar(Long idSolicitacao){
+        return solicitacaoBean.setFlagRecusar(idSolicitacao);
+    }
     
 }
 
