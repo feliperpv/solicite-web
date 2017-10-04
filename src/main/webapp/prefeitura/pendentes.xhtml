@@ -6,35 +6,81 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-     <ui:composition template="templateprefeitura.xhtml">
+    <ui:composition template="templateprefeitura.xhtml">
         <ui:define name="principal">
-            <h:form>
-                <p:panel header="Solicitações Pendentes" style="margin-bottom:20px">
-                    <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}">
+            <p:tabView>
+                <p:tab title="Pendentes">
+                    <h:form>
+                        <p:panel header="Pendentes" style="margin-bottom:20px">
+                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}">
 
-                    <p:column headerText="Código" style="width:60px; text-align: center">
-                        <h:outputText value="#{solicitacao.idSolicitacao}"/>
-                    </p:column>
-                    <p:column headerText="Descrição">
-                        <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
-                    </p:column>
-                    <p:column headerText="Endereço">
-                        <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
-                    </p:column>
-                    <p:column headerText="Categoria">
-                        <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
-                    </p:column>
-                    <p:column headerText="Ações" style="width:205px">
-                        <p:commandButton value="Aceitar" ajax="false" action="#{solicitacaoMB.setFlagAtivo(solicitacao.idSolicitacao)}" style="width:100px; background-color: lime" ></p:commandButton>
-                        <p:commandButton value="Recusar" ajax="false" action="#" style="width:100px; background-color: red"></p:commandButton>
-                    </p:column>
-                
-                </p:dataTable>
+                                <p:column headerText="Código" style="width:60px; text-align: center">
+                                    <h:outputText value="#{solicitacao.idSolicitacao}"/>
+                                </p:column>
+                                <p:column headerText="Descrição">
+                                    <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
+                                </p:column>
+                                <p:column headerText="Endereço">
+                                    <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
+                                </p:column>
+                                <p:column headerText="Categoria">
+                                    <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
+                                </p:column>
+                                <p:column headerText="Ações" style="width:205px">
+                                    <p:commandButton value="Aceitar" ajax="false" action="#{solicitacaoMB.setFlagAtivo(solicitacao.idSolicitacao)}" style="width:100px; background-color: lime" ></p:commandButton>
+                                    <p:commandButton value="Recusar" ajax="false" action="#" style="width:100px; background-color: red"></p:commandButton>
+                                </p:column>
 
-            </p:panel>
-            </h:form>
+                            </p:dataTable>
+
+                        </p:panel>
+                    </h:form>
+                </p:tab>
+                <p:tab title="Aceitas">
+                    <h:form>
+                        <p:panel header="Aceitas" style="margin-bottom:20px">
+                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}">
+
+                                <p:column headerText="Código" style="width:60px; text-align: center">
+                                    <h:outputText value="#{solicitacao.idSolicitacao}"/>
+                                </p:column>
+                                <p:column headerText="Descrição">
+                                    <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
+                                </p:column>
+                                <p:column headerText="Endereço">
+                                    <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
+                                </p:column>
+                                <p:column headerText="Categoria">
+                                    <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+                    </h:form>
+                </p:tab>
+                <p:tab title="Rejeitadas">
+                    <h:form>
+                        <p:panel header="Rejeitadas" style="margin-bottom:20px">
+                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}">
+
+                                <p:column headerText="Código" style="width:60px; text-align: center">
+                                    <h:outputText value="#{solicitacao.idSolicitacao}"/>
+                                </p:column>
+                                <p:column headerText="Descrição">
+                                    <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
+                                </p:column>
+                                <p:column headerText="Endereço">
+                                    <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
+                                </p:column>
+                                <p:column headerText="Categoria">
+                                    <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+                    </h:form>
+                </p:tab>
+            </p:tabView>
         </ui:define>
     </ui:composition>
-    
+
 </html>
 
