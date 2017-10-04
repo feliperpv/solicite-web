@@ -19,5 +19,6 @@ public interface ISolicitacao {
     public void criar(String endereco, String descricao, String observacao, Long idCategoria, Long idPrefeitura);
     public List<Solicitacao> consultar();
     public int setFlagAceitar(Long idSolicitacao);
-
+    public List<Solicitacao> consultarSolicitacoesRecusadas();
+    public int setFlagRecusar(Long idSolicitacao);
 }

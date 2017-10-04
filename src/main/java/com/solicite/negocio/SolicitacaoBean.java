@@ -65,4 +65,14 @@ public class SolicitacaoBean implements ISolicitacao{
     public int setFlagAceitar(Long idSolicitacao){
         return em.createQuery("UPDATE Solicitacao s SET s.flagAtivo = 1 WHERE s.idSolicitacao = " + idSolicitacao, Solicitacao.class).executeUpdate();
     }
+    
+    @Override
+    public List<Solicitacao> consultarSolicitacoesRecusadas(){
+        return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo = 0", Solicitacao.class).getResultList();
+    }
+    
+    @Override
+    public int setFlagRecusar(Long idSolicitacao){
+        return em.createQuery("UPDATE Solicitacao s SET s.flagAtivo = 0 WHERE s.idSolicitacao = " + idSolicitacao, Solicitacao.class).executeUpdate();
+    }
 }

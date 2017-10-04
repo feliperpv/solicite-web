@@ -100,5 +100,13 @@ public class SolicitacaoMB {
         return solicitacaoBean.setFlagAceitar(idSolicitacao);
     }
     
+    public List<Solicitacao> consultarSolicitacoesRecusadas(){
+        return solicitacaoBean.consultarSolicitacoesRecusadas();
+    }
+        
+    public int setFlagRecusar(Long idSolicitacao){
+        return solicitacaoBean.setFlagRecusar(idSolicitacao);
+    }
+    
 }
 
