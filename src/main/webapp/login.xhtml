@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Login</title>
     </h:head>
@@ -10,12 +11,14 @@
         <h:form>
             <p:panelGrid columns="2">
                     <p:outputLabel value="Usuário: "></p:outputLabel>
-                    <p:inputText value='#{loginMB.lgn.login}'></p:inputText>
-
+                    <p:inputText id="login" value='#{loginMB.lgn.login}'  required="true" requiredMessage="Usuário não pode ser vazio"></p:inputText>
+                                        
                     <p:outputLabel value="Senha: "></p:outputLabel>
-                    <p:password value='#{loginMB.lgn.senha}'></p:password>
-
+                    <p:password id="senha" value='#{loginMB.lgn.senha}' required="true" requiredMessage="Senha não pode ser vazia"></p:password>
+                                        
                     <h:commandButton value="Entrar" action="#{loginMB.validar()}"></h:commandButton>
+                    
+                    <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
             </p:panelGrid>
         </h:form>
     </h:body>
