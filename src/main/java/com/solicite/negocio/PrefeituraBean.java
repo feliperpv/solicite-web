@@ -30,8 +30,5 @@ public class PrefeituraBean implements IPrefeitura{
     public List<Prefeitura> consultarByEstado(Long idEstado) {
         return em.createQuery("SELECT p FROM Prefeitura p WHERE p.estado.idEstado = " + idEstado, Prefeitura.class).getResultList();
     }
-    
-    
-
-   
+      
 }
