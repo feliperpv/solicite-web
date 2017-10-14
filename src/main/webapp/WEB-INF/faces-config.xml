@@ -6,23 +6,12 @@
     <navigation-rule>
         <from-view-id>/login.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>erro</from-outcome>
-            <to-view-id>/erro.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
             <from-outcome>usuario</from-outcome>
             <to-view-id>/usuario/inicial.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>prefeitura</from-outcome>
             <to-view-id>/prefeitura/inicialprefeitura.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
-        <from-view-id>/erro.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>login</from-outcome>
-            <to-view-id>/login.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>

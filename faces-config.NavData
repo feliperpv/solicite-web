@@ -6,10 +6,10 @@
         <Node id="usuario/inicial.xhtml" x="441" y="144" zoom="false"/>
         <Node id="prefeitura/pendentes.xhtml" x="666" y="491" zoom="true"/>
         <Node id="usuario/solicitacoesusuario.xhtml" x="377" y="420" zoom="true"/>
-        <Node id="prefeitura/templateprefeitura.xhtml" x="441" y="5" zoom="true"/>
         <Node id="erro.xhtml" x="738" y="-71" zoom="true"/>
-        <Node id="usuario/templateusuario.xhtml" x="456" y="-23" zoom="true"/>
+        <Node id="prefeitura/templateprefeitura.xhtml" x="441" y="5" zoom="true"/>
         <Node id="prefeitura/inicialprefeitura.xhtml" x="744" y="375" zoom="true"/>
+        <Node id="usuario/templateusuario.xhtml" x="456" y="-23" zoom="true"/>
         <Node id="usuario/produtoseservicos.xhtml" x="80" y="-33" zoom="true"/>
         <Node id="usuario/novasolicitacao.xhtml" x="7" y="405" zoom="true"/>
     </Scope>

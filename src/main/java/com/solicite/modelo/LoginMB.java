@@ -6,8 +6,10 @@
 package com.solicite.modelo;
 
 import com.solicite.entidade.Login;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import lombok.Data;
 
 /**
@@ -35,8 +37,9 @@ public class LoginMB {
                 lgn.getSenha().equals("prefeitura123")){
             
             return "prefeitura";
-        } else {
-            return "erro";
+        } else {            
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "ERRO!", "Usuário ou senha inválidos"));
+            return "";
         }
     }
 }
