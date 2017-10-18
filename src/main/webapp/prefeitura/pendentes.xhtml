@@ -9,77 +9,72 @@
     <ui:composition template="templateprefeitura.xhtml">
         <ui:define name="principal">
             <p:tabView>
-                <p:tab title="Pendentes">
+                <p:tab title="Solicitações Pendentes">
                     <h:form>
-                        <p:panel header="Pendentes" style="margin-bottom:20px">
-                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}"
-                                         paginator="true" rows="5"
-                                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+                        <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}"
+                                     paginator="true" rows="5"
+                                     paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
-                                <p:column headerText="Código" style="width:60px; text-align: center">
-                                    <h:outputText value="#{solicitacao.idSolicitacao}"/>
-                                </p:column>
-                                <p:column headerText="Descrição">
-                                    <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
-                                </p:column>
-                                <p:column headerText="Endereço">
-                                    <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
-                                </p:column>
-                                <p:column headerText="Categoria">
-                                    <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
-                                </p:column>
-                                <p:column headerText="Ações" style="width:205px">
-                                    <p:commandButton value="Aceitar" ajax="false" action="#{solicitacaoMB.setFlagAtivo(solicitacao.idSolicitacao)}" style="width:100px; background-color: lime" ></p:commandButton>
-                                    <p:commandButton value="Recusar" ajax="false" action="#{solicitacaoMB.setFlagRecusar(solicitacao.idSolicitacao)}" style="width:100px; background-color: red"></p:commandButton>
-                                </p:column>
+                            <p:column headerText="Código" style="width:60px; text-align: center">
+                                <h:outputText value="#{solicitacao.idSolicitacao}"/>
+                            </p:column>
+                            <p:column headerText="Descrição">
+                                <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
+                            </p:column>
+                            <p:column headerText="Endereço">
+                                <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
+                            </p:column>
+                            <p:column headerText="Categoria">
+                                <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
+                            </p:column>
+                            <p:column headerText="Ações" style="width:205px">
+                                <p:commandButton value="Aceitar" ajax="false" action="#{solicitacaoMB.setFlagAtivo(solicitacao.idSolicitacao)}" style="width:100px; background-color: lime" ></p:commandButton>
+                                <p:commandButton value="Recusar" ajax="false" action="#{solicitacaoMB.setFlagRecusar(solicitacao.idSolicitacao)}" style="width:100px; background-color: red"></p:commandButton>
+                            </p:column>
 
-                            </p:dataTable>
-                        </p:panel>
+                        </p:dataTable>
                     </h:form>
                 </p:tab>
-                <p:tab title="Aceitas">
+
+                <p:tab title="Solicitações Aceitas">
                     <h:form>
-                        <p:panel header="Aceitas" style="margin-bottom:20px">
-                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesAceitas()}"
-                                         paginator="true" rows="5"
-                                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
-                                <p:column headerText="Código" style="width:60px; text-align: center">
-                                    <h:outputText value="#{solicitacao.idSolicitacao}"/>
-                                </p:column>
-                                <p:column headerText="Descrição">
-                                    <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
-                                </p:column>
-                                <p:column headerText="Endereço">
-                                    <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
-                                </p:column>
-                                <p:column headerText="Categoria">
-                                    <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
-                                </p:column>
-                            </p:dataTable>
-                        </p:panel>
+                        <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesAceitas()}"
+                                     paginator="true" rows="5"
+                                     paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+                            <p:column headerText="Código" style="width:60px; text-align: center">
+                                <h:outputText value="#{solicitacao.idSolicitacao}"/>
+                            </p:column>
+                            <p:column headerText="Descrição">
+                                <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
+                            </p:column>
+                            <p:column headerText="Endereço">
+                                <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
+                            </p:column>
+                            <p:column headerText="Categoria">
+                                <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
+                            </p:column>
+                        </p:dataTable>
                     </h:form>
                 </p:tab>
-                <p:tab title="Recusadas">
+                <p:tab title="Solicitações Recusadas">
                     <h:form>
-                        <p:panel header="Recusadas" style="margin-bottom:20px">
-                            <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesRecusadas()}"
-                                         paginator="true" rows="5"
-                                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+                        <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesRecusadas()}"
+                                     paginator="true" rows="5"
+                                     paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
-                                <p:column headerText="Código" style="width:60px; text-align: center">
-                                    <h:outputText value="#{solicitacao.idSolicitacao}"/>
-                                </p:column>
-                                <p:column headerText="Descrição">
-                                    <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
-                                </p:column>
-                                <p:column headerText="Endereço">
-                                    <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
-                                </p:column>
-                                <p:column headerText="Categoria">
-                                    <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
-                                </p:column>
-                            </p:dataTable>
-                        </p:panel>
+                            <p:column headerText="Código" style="width:60px; text-align: center">
+                                <h:outputText value="#{solicitacao.idSolicitacao}"/>
+                            </p:column>
+                            <p:column headerText="Descrição">
+                                <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
+                            </p:column>
+                            <p:column headerText="Endereço">
+                                <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
+                            </p:column>
+                            <p:column headerText="Categoria">
+                                <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
+                            </p:column>
+                        </p:dataTable>
                     </h:form>
                 </p:tab>
             </p:tabView>
