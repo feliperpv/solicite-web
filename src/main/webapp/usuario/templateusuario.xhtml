@@ -30,10 +30,9 @@
                             <h:graphicImage library="images" name="user.png" height="90px" width="90px"></h:graphicImage>
                         </h:panelGrid>
 
-                        <h:panelGrid columns="1" cellpadding="5" style="width: 100%">
-                            <h:outputText value="Nome" />
-                            <h:outputText value="CPF" />
-                            <h:outputText value="Pontos" />
+                        <h:panelGrid columns="1" cellpadding="5">
+                            <h:outputText value="#{usuarioMB.consultar().nomeUsuario}" />
+                            <h:outputText value="Pontos: #{usuarioMB.consultar().pontos}" />
                         </h:panelGrid>
                         
                         <h:panelGrid columns="1" cellpadding="5">

@@ -7,6 +7,8 @@ package com.solicite.negocio;
 
 import com.solicite.entidade.Usuario;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
@@ -14,12 +16,12 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class UsuarioBean implements IUsuario{
+    
+    @PersistenceContext
+    private EntityManager em;
 
     @Override
-    public boolean criar(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Usuario consultar() {
+        return em.createQuery("SELECT u FROM Usuario u WHERE u.idUsuario = 1", Usuario.class).getSingleResult();
     }
-    
-
-    
 }

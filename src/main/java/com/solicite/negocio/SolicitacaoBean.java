@@ -35,7 +35,7 @@ public class SolicitacaoBean implements ISolicitacao{
     @Override
     public void criar(String endereco, String descricao, String observacao, Long idCategoria, Long idPrefeitura) {
         Prefeitura prefeitura = null;
-        for (Prefeitura p: prefeituraBean.consultar()){
+        for (Prefeitura p: prefeituraBean.consultarPrefeituras()){
             if (p.getIdPrefeitura() == idPrefeitura)
                 prefeitura = p;
         }

@@ -6,6 +6,7 @@
       xmlns:p="http://primefaces.org/ui">
     
     <h:head>
+
         <style>
             .styleTop{
                 width: 100%;
@@ -31,9 +32,8 @@
                         </h:panelGrid>
 
                         <h:panelGrid columns="1" cellpadding="5">
-                            <h:outputText value="Nome Prefeitura" />
-                            <h:outputText value="CNPJ" />
-                            <h:outputText value="Solicitações Pendentes" />
+                            <h:outputText value="#{prefeituraMB.consultar().nomePrefeitura}" />
+                            <h:outputText value="#{prefeituraMB.consultar().nomePrefeitura}" />
                         </h:panelGrid>
                         
                         <h:panelGrid columns="1" cellpadding="5">

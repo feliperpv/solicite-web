@@ -29,8 +29,13 @@ public class PrefeituraMB {
     @EJB
     private IEstado estadoBean;
     private Long idEstado;
+       
     
-    public List<Prefeitura> consultar(){
+    public List<Prefeitura> consultarPrefeituras(){
+        return prefeituraBean.consultarPrefeituras();
+    }
+    
+    public Prefeitura consultar(){
         return prefeituraBean.consultar();
     }
     
