@@ -16,11 +16,5 @@ import java.util.List;
 @Local
 public interface IUsuario {
     
-    boolean criar(Usuario usuario);
-    
-    
-    //boolean alterar (Long id, String novaDescricao);
-    //boolean deletar (Long id);
-    //List<Usuario> consultar();
-    
+    public Usuario consultar();
 }

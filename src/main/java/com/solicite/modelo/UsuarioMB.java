@@ -7,6 +7,7 @@ package com.solicite.modelo;
 
 import com.solicite.entidade.Usuario;
 import com.solicite.negocio.IUsuario;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.view.ViewScoped;
@@ -20,14 +21,12 @@ import lombok.Data;
 @SessionScoped
 @Data
 public class UsuarioMB {
-    
-    private Usuario usuario;
-    
+        
+    @EJB
     private IUsuario usuarioBean;
     
-    public UsuarioMB(){
-        super();
-        usuario = new Usuario();
+    public Usuario consultar(){
+        return usuarioBean.consultar();
     }
     
 }

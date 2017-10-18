@@ -22,7 +22,12 @@ public class PrefeituraBean implements IPrefeitura{
     private EntityManager em;
     
     @Override
-    public List<Prefeitura> consultar() {
+    public Prefeitura consultar() {
+        return em.createQuery("SELECT p FROM Prefeitura p WHERE p.idPrefeitura = 1", Prefeitura.class).getSingleResult();
+    }
+    
+    @Override
+    public List<Prefeitura> consultarPrefeituras() {
         return em.createQuery("SELECT p FROM Prefeitura p", Prefeitura.class).getResultList();
     }
 
