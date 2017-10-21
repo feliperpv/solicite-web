@@ -18,7 +18,19 @@
             .ui-layout-unit{
                 padding: 0px !important;
             }
-        </style>
+
+            .ui-separator{
+                width: 500px;
+                height: 2px;
+            }
+
+           .noGridBorder tr, .noGridBorder td{
+                border: none !important;
+                text-align: center;
+                padding: 30px 50px 0px 50px !important;
+            };
+            
+            </style>
     </h:head>
     <h:body>
         <h:form>
@@ -34,11 +46,11 @@
                             <h:outputText value="#{usuarioMB.consultar().nomeUsuario}" />
                             <h:outputText value="Pontos: #{usuarioMB.consultar().pontos}" />
                         </h:panelGrid>
-                        
+
                         <h:panelGrid columns="1" cellpadding="5">
                             <p:commandButton value="Home" action="inicial"></p:commandButton>
                         </h:panelGrid>
-                        
+
                         <h:panelGrid columns="1" cellpadding="5">
                             <p:commandButton value="Nova Solicitação" action="novasolicitacao"></p:commandButton>
                         </h:panelGrid>
