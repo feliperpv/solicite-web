@@ -13,6 +13,7 @@ import com.solicite.negocio.ICategoria;
 import com.solicite.negocio.IEstado;
 import com.solicite.negocio.IPrefeitura;
 import com.solicite.negocio.ISolicitacao;
+import com.solicite.negocio.IUsuario;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
@@ -52,6 +53,9 @@ public class SolicitacaoMB {
     @EJB
     private IEstado estadoBean;
     private Long idEstado;
+    
+    @EJB
+    private IUsuario usuarioBean;
     
     public String criar(){
         
@@ -110,6 +114,15 @@ public class SolicitacaoMB {
         
     public int setFlagRecusar(Long idSolicitacao){
         return solicitacaoBean.setFlagRecusar(idSolicitacao);
+    }
+    
+    public int aumentarPontuacao(int pontos){
+        return usuarioBean.aumentarPontos(pontos);
+    }
+    
+    public void aceitarSolicitacao(Long idSolicitacao, int pontos){
+        this.aumentarPontuacao(pontos);
+        this.setFlagAtivo(idSolicitacao);
     }
     
 }
