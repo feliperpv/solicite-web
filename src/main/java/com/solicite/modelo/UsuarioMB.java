@@ -29,5 +29,9 @@ public class UsuarioMB {
         return usuarioBean.consultar();
     }
     
+    public int diminutirPontos(int pontos){
+        return  usuarioBean.diminuirPontos(pontos);
+    }
+    
 }
 

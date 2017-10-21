@@ -24,4 +24,14 @@ public class UsuarioBean implements IUsuario{
     public Usuario consultar() {
         return em.createQuery("SELECT u FROM Usuario u WHERE u.idUsuario = 1", Usuario.class).getSingleResult();
     }
+    
+    @Override
+    public int diminuirPontos(int pontos) {
+        return em.createQuery("UPDATE Usuario u SET u.pontos = u.pontos - " + pontos + " WHERE u.idUsuario = 1", Usuario.class).executeUpdate();
+    }
+    
+    @Override
+    public int aumentarPontos(int pontos) {
+        return em.createQuery("UPDATE Usuario u SET u.pontos = u.pontos + " + pontos + " WHERE u.idUsuario = 1", Usuario.class).executeUpdate();
+    }
 }

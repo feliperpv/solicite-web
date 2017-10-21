@@ -17,4 +17,6 @@ import java.util.List;
 public interface IUsuario {
     
     public Usuario consultar();
+    public int diminuirPontos(int pontos);
+    public int aumentarPontos(int pontos);
 }
