@@ -6,7 +6,7 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Login</title>
-        
+
         <style>
             .noGridBorder tr, .noGridBorder td{
                 border: none !important
@@ -16,17 +16,30 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:panelGrid columns="2" styleClass="noGridBorder">
-                    <p:outputLabel value="Usuário: "></p:outputLabel>
-                    <p:inputText id="login" value='#{loginMB.lgn.login}'  required="true" requiredMessage="Usuário não pode ser vazio"></p:inputText>
-                                        
-                    <p:outputLabel value="Senha: "></p:outputLabel>
-                    <p:password id="senha" value='#{loginMB.lgn.senha}' required="true" requiredMessage="Senha não pode ser vazia"></p:password>
-                                        
-                    <h:commandButton value="Entrar" action="#{loginMB.validar()}"></h:commandButton>
-                    
-                    <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
-            </p:panelGrid>
+            <div style="position: absolute; height: 98%; width: 98%; background-image: url('./resources/images/cidade-luz.jpg');">
+
+                <p:fieldset style= "width: 20%; margin: 100px auto; border-radius:15px; box-shadow: 0 0px 30px #888888; background-color: rgba(255,255,255,0.9);">
+                    <div align="center" style="margin: 0 0 20px 0;">
+                        <h:graphicImage library="images" name="user.png" height="90px" width="90px"></h:graphicImage>
+                    </div>
+                    <div align="center" style="margin: 10px 0 10px 0;">
+                        <p:panelGrid columns="2" styleClass="noGridBorder">
+                            <p:outputLabel value="USUÁRIO: "></p:outputLabel>
+                            <p:inputText id="login" value='#{loginMB.lgn.login}'  required="true" requiredMessage="Usuário não pode ser vazio"></p:inputText>
+
+                            <p:outputLabel value="SENHA: "></p:outputLabel>
+                            <p:password id="senha" value='#{loginMB.lgn.senha}' required="true" requiredMessage="Senha não pode ser vazia"></p:password>
+                        </p:panelGrid>
+                    </div>
+                    <div align="center" style="margin: 15px 0 10px 0;">
+                        <h:commandButton value="ENTRAR" action="#{loginMB.validar()}"></h:commandButton>
+                    </div>                    
+                    <p:panelGrid columns="1" styleClass="noGridBorder">
+                        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                    </p:panelGrid>
+                </p:fieldset>
+                
+            </div>
         </h:form>
     </h:body>
 </html>
