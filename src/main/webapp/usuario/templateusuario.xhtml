@@ -8,14 +8,18 @@
 
     <h:head>
         <style>
-            /*
-            .styleTop{
-                width: 100%;
-                height: 100%;
+            .ui-menubar{
+                padding: 15px 0px;
+                background-color: rgba(0,0,0,0.6);
             }
-            */
+            
+            .ui-menu .ui-menuitem{
+                margin: 5px;
+            }
+            
             .ui-layout-unit .ui-layout-unit-content{
                 padding: 0px !important;
+                overflow: hidden;
             }
             .ui-layout-unit{
                 padding: 0px !important;
@@ -26,53 +30,72 @@
                 height: 2px;
             }
 
-           .noGridBorder tr, .noGridBorder td{
+            .noGridBorder tr, .noGridBorder td{
                 border: none !important;
                 text-align: center;
                 padding: 30px 50px 0px 50px !important;
             };
-            
-            .noGridBorderk tr noGridBorderk td{
-                border: none !important;
-            }
-            </style>
-    </h:head>
+        </style>
+  </h:head>
     <h:body>
         <h:form>
             <p:layout fullPage="true">
-                <p:layoutUnit position="north" size="150">
-                    <h:panelGrid columns="7" styleClass="styleTop">
+                <p:layoutUnit position="north">
 
-                        <h:panelGrid columns="1" cellpadding="5" >
-                            <h:graphicImage library="images" name="user.png" height="90px" width="90px"></h:graphicImage>
-                        </h:panelGrid>
+                    <p:menubar>
+                        <p:menuitem>
+                            <h:graphicImage library="images" name="user.png" height="30px" width="30px"></h:graphicImage>    
+                        </p:menuitem>
 
-                        <h:panelGrid columns="1" cellpadding="5">
-                            <h:outputText value="#{usuarioMB.consultar().nomeUsuario}" />
-                            <h:outputText value="Pontos: #{usuarioMB.consultar().pontos}" />
-                        </h:panelGrid>
+                        <p:menuitem>
+                             <h:outputText value="#{usuarioMB.consultar().nomeUsuario}"/>  
+                        </p:menuitem>
 
-                        <h:panelGrid columns="1" cellpadding="5">
-                            <p:commandButton value="Home" action="inicial"></p:commandButton>
-                        </h:panelGrid>
+                        <p:menuitem>
+                           <h:outputText value="Pontos: #{usuarioMB.consultar().pontos}"/>   
+                        </p:menuitem>
 
-                        <h:panelGrid columns="1" cellpadding="5">
-                            <p:commandButton value="Nova Solicitação" action="novasolicitacao"></p:commandButton>
-                        </h:panelGrid>
+                        <f:facet name="options">
+                            <h:commandButton value="Home" action="inicial"></h:commandButton>
+                            <h:commandButton value="Nova Solicitação" action="novasolicitacao"></h:commandButton>
+                            <h:commandButton value="Solicitações" action="solicitacoes"></h:commandButton>
+                            <h:commandButton value="Produtos e Serviços" action="produtoseservicos"></h:commandButton>
+                            <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+                        </f:facet>
+                    </p:menubar>
 
-                        <h:panelGrid columns="1" cellpadding="5">
-                            <p:commandButton value="Solicitações" action="solicitacoes"/>
-                        </h:panelGrid>
-
-                        <h:panelGrid columns="1" cellpadding="5">
-                            <p:commandButton value="Produtos e Serviços" action="produtoseservicos"/>
-                        </h:panelGrid>
-
-                        <p:commandLink action="/faces/login.xhtml">
-                            <h:outputText value="Sair"/>
-                        </p:commandLink>
-
-                    </h:panelGrid>
+                    <!-- <h:panelGrid columns="7" styleClass="styleTop">
+ 
+                         <h:panelGrid columns="1" cellpadding="5" >
+                             <h:graphicImage library="images" name="user.png" height="90px" width="90px"></h:graphicImage>
+                         </h:panelGrid>
+ 
+                         <h:panelGrid columns="1" cellpadding="5">
+                             />
+                              />
+                         </h:panelGrid>
+ 
+                         <h:panelGrid columns="1" cellpadding="5">
+                             <p:commandButton value="Home" action="inicial"></p:commandButton>
+                         </h:panelGrid>
+ 
+                         <h:panelGrid columns="1" cellpadding="5">
+                             <p:commandButton value="Nova Solicitação" action="novasolicitacao"></p:commandButton>
+                         </h:panelGrid>
+ 
+                         <h:panelGrid columns="1" cellpadding="5">
+                             <p:commandButton value="Solicitações" action="solicitacoes"/>
+                         </h:panelGrid>
+ 
+                         <h:panelGrid columns="1" cellpadding="5">
+                             <p:commandButton value="Produtos e Serviços" action="produtoseservicos"/>
+                         </h:panelGrid>
+ 
+                         <p:commandLink action="/faces/login.xhtml">
+                             <h:outputText value="Sair"/>
+                         </p:commandLink>
+ 
+                     </h:panelGrid> -->
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center" >
