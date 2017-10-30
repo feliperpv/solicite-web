@@ -1,0 +1,28 @@
+.ui-menubar{
+    padding: 15px 0px;
+    /*background-color: rgba(0,0,0,0.6);*/
+    background-color: #a880ff;
+}
+
+.ui-menu .ui-menuitem{
+    margin: 5px;
+}
+
+.ui-layout-unit .ui-layout-unit-content{
+    padding: 0px !important;
+    overflow: hidden;
+}
+.ui-layout-unit{
+    padding: 0px !important;
+}
+
+.ui-separator{
+    width: 500px;
+    height: 2px;
+}
+
+.noGridBorder tr, .noGridBorder td{
+    border: none !important;
+    text-align: center;
+    padding: 30px 50px 0px 50px !important;
+};
