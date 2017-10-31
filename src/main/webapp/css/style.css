@@ -1,7 +1,12 @@
+.ui-widget-content{
+    border: none !important;
+}
+
 .ui-menubar{
     padding: 15px 0px;
     /*background-color: rgba(0,0,0,0.6);*/
-    background-color: #a880ff;
+    background-color: #4b3863;
+    color: white;
 }
 
 .ui-menu .ui-menuitem{
