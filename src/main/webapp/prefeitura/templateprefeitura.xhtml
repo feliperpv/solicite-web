@@ -3,58 +3,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     <h:head>
-        <style>            
-            .ui-layout-unit .ui-layout-unit-content{
-                padding: 0px !important;
-            }
-            .ui-layout-unit{
-                padding: 0px !important;
-            }
-            
-            .ui-separator{
-                width: 500px;
-                height: 2px;
-            }
-
-           .noGridBorder tr, .noGridBorder td{
-                border: none !important;
-                text-align: center;
-                padding: 30px 50px 0px 50px !important;
-            };
-        </style>
+            <link rel="stylesheet" href="../css/style.css"></link>
     </h:head>
     <h:body>
         <h:form>
             <p:layout fullPage="true">
 
-                <p:layoutUnit position="north" size="150">
-                    <h:panelGrid columns="6" cellpadding="10" styleClass="styleTop">
+                <p:layoutUnit position="north">
+                    
+                    <p:menubar>
+                        <p:menuitem>
+                            <h:graphicImage library="images" name="prefeitura.png" height="30px" width="30px"></h:graphicImage>    
+                        </p:menuitem>
 
-                        <h:panelGrid columns="1" cellpadding="5">
-                            <h:graphicImage library="images" name="prefeitura.png" height="90px" width="90px"></h:graphicImage>
-                        </h:panelGrid>
+                        <p:menuitem>
+                             <h:outputText value="#{prefeituraMB.consultar().nomePrefeitura}" />  
+                        </p:menuitem>
 
-                        <h:panelGrid columns="1" cellpadding="5">
-                            <h:outputText value="#{prefeituraMB.consultar().nomePrefeitura}" />
-                            <h:outputText value="#{prefeituraMB.consultar().nomePrefeitura}" />
-                        </h:panelGrid>
-                        
-                        <h:panelGrid columns="1" cellpadding="5">
-                            <p:commandButton value="Home" action="inicial" ></p:commandButton>
-                        </h:panelGrid>
-                        
-                        <h:panelGrid columns="1" cellpadding="5">
-                            <p:commandButton value="Solicitações" action="pendentes"/>
-                        </h:panelGrid>
-
-                        <p:commandLink action="/faces/login.xhtml">
-                            <h:outputText value="Sair"/>
-                        </p:commandLink>
-
-                    </h:panelGrid>
+                        <f:facet name="options">
+                            <h:commandLink value="Home" action="inicial"></h:commandLink>
+                            <h:commandLink value="Solicitações" action="pendentes"></h:commandLink>
+                            <h:commandLink value="Sair" action="/faces/login.xhtml"></h:commandLink>
+                        </f:facet>
+                    </p:menubar>
+                    
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">

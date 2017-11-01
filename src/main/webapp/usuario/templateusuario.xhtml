@@ -28,47 +28,13 @@
                         </p:menuitem>
 
                         <f:facet name="options">
-                            <h:commandButton value="Home" action="inicial"></h:commandButton>
-                            <h:commandButton value="Nova Solicitação" action="novasolicitacao"></h:commandButton>
-                            <h:commandButton value="Solicitações" action="solicitacoes"></h:commandButton>
-                            <h:commandButton value="Produtos e Serviços" action="produtoseservicos"></h:commandButton>
-                            <h:commandButton value="Sair" action="../login"></h:commandButton>
-                            <!--<p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />-->
+                            <h:commandLink value="Home" action="inicial"></h:commandLink>
+                            <h:commandLink value="Nova Solicitação" action="novasolicitacao"></h:commandLink>
+                            <h:commandLink value="Solicitações" action="solicitacoes"></h:commandLink>
+                            <h:commandLink value="Produtos e Serviços" action="produtoseservicos"></h:commandLink>
+                            <h:commandLink value="Sair" action="/faces/login.xhtml"></h:commandLink>
                         </f:facet>
-                    </p:menubar>
-
-                    <!-- <h:panelGrid columns="7" styleClass="styleTop">
- 
-                         <h:panelGrid columns="1" cellpadding="5" >
-                             <h:graphicImage library="images" name="user.png" height="90px" width="90px"></h:graphicImage>
-                         </h:panelGrid>
- 
-                         <h:panelGrid columns="1" cellpadding="5">
-                             />
-                              />
-                         </h:panelGrid>
- 
-                         <h:panelGrid columns="1" cellpadding="5">
-                             <p:commandButton value="Home" action="inicial"></p:commandButton>
-                         </h:panelGrid>
- 
-                         <h:panelGrid columns="1" cellpadding="5">
-                             <p:commandButton value="Nova Solicitação" action="novasolicitacao"></p:commandButton>
-                         </h:panelGrid>
- 
-                         <h:panelGrid columns="1" cellpadding="5">
-                             <p:commandButton value="Solicitações" action="solicitacoes"/>
-                         </h:panelGrid>
- 
-                         <h:panelGrid columns="1" cellpadding="5">
-                             <p:commandButton value="Produtos e Serviços" action="produtoseservicos"/>
-                         </h:panelGrid>
- 
-                         <p:commandLink action="/faces/login.xhtml">
-                             <h:outputText value="Sair"/>
-                         </p:commandLink>
- 
-                     </h:panelGrid> -->
+                    </p:menubar> 
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center" >
