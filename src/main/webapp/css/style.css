@@ -43,7 +43,19 @@ a:-webkit-any-link{
     
 }
 
+a:any-link{
+    text-decoration: none;
+    color: white;
+    padding: 20px 15px;
+    
+}
+
 a:-webkit-any-link:hover{
+    	color: #1a237e;
+	background: white;
+}
+
+a:any-link:hover{
     	color: #1a237e;
 	background: white;
 }
