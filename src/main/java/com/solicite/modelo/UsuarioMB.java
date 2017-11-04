@@ -33,5 +33,18 @@ public class UsuarioMB {
         return  usuarioBean.diminuirPontos(pontos);
     }
     
+    public boolean validarPontos(int pontos){
+        int pontosAtuais = usuarioBean.consultar().getPontos();
+        
+        return (pontosAtuais - pontos) >= 0;
+
+    }
+    
+    public void trocarPontos(int pontos){
+        if(validarPontos(pontos)){
+            diminutirPontos(pontos);
+        }
+    }
+    
 }
 
