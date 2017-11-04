@@ -1,18 +1,23 @@
+h1{
+    margin: 0 20px;
+    padding: 0;
+}
+
 .ui-widget-content{
     border: none !important;
 }
 .ui-menubar{
-    padding: 0px 0px;
-    color: white;
-    height: 55px;
+    padding: 0px 0px !important;
+    color: white !important;
+    height: 80px;
 }
 
 .ui-menu, .ui-menu .ui-menu-child{
-    background: #1a237e;
+    background: #16C172;
 } 
 
 .ui-menu .ui-menuitem{
-    margin: 15px 5px;
+    margin: 30px 10px;
 }
 .ui-layout-unit .ui-layout-unit-content{
     padding: 0px !important;
@@ -35,23 +40,21 @@
 a:-webkit-any-link{
     text-decoration: none;
     color: white;
-    padding: 20px 15px;
-    
+    padding: 30px 15px;    
 }
 
 a:any-link{
     text-decoration: none;
     color: white;
-    padding: 20px 15px;
-    
+    padding: 30px 15px;    
 }
 
 a:-webkit-any-link:hover{
-    	color: #1a237e;
+    	color: #16C172;
 	background: white;
 }
 
 a:any-link:hover{
-    	color: #1a237e;
+    	color: #16C172;
 	background: white;
 }
