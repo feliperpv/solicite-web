@@ -11,6 +11,9 @@
 
             <h:form>
                 <p:growl id="growl" showDetail="true" sticky="true" /> 
+                <h1>Novas Solicitações</h1>
+                <p:separator style="height: 0.5px !important; width: 800px !important;"></p:separator>
+                <div>
                     <h:panelGrid columns="2" cellpadding="10">
 
                         <h:outputText value="Categoria:" />
@@ -37,6 +40,7 @@
 
                         <p:commandButton value="Adicionar" ajax="false" action="#{solicitacaoMB.criar()}" actionListener="#{solicitacaoMB.mensagemSucesso}" update="growl"></p:commandButton>
                     </h:panelGrid>
+                </div>   
             </h:form>
 
         </ui:define>
