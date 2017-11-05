@@ -1,8 +1,7 @@
 h1{
-    margin: 0 20px;
+    margin: 10px 20px;
     padding: 0;
 }
-
 .ui-widget-content{
     border: none !important;
 }
@@ -11,26 +10,29 @@ h1{
     color: white !important;
     height: 80px;
 }
-
 .ui-menu, .ui-menu .ui-menu-child{
-    background: #16C172;
+    background: #2364AA;
 } 
-
 .ui-menu .ui-menuitem{
-    margin: 30px 10px;
+    margin: 0px 10px;
 }
 .ui-layout-unit .ui-layout-unit-content{
     padding: 0px !important;
-    overflow: hidden;
+/*    overflow: hidden;*/
 }
-
 .ui-layout-unit{
     padding: 0px !important;
 }
 .ui-separator{
-    width: 500px;
+    width: 800px;
     height: 2px;
 }
+.separator-class{
+    height: 0.5px !important; 
+    width: 1000px !important;
+    float: left;
+}
+
 .noGridBorder tr, .noGridBorder td{
     border: none !important;
     text-align: center;
@@ -50,11 +52,11 @@ a:any-link{
 }
 
 a:-webkit-any-link:hover{
-    	color: #16C172;
+    	color: #2364AA;
 	background: white;
 }
 
 a:any-link:hover{
-    	color: #16C172;
+    	color: #2364AA;
 	background: white;
 }

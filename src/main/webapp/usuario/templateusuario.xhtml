@@ -7,24 +7,24 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
+        <title>Solicite WEB</title>
         <link rel="stylesheet" href="../css/style.css"></link>
     </h:head>
     <h:body>
         <h:form>
             <p:layout fullPage="true">
                 <p:layoutUnit position="north">
-
                     <p:menubar>
                         <p:menuitem>
                             <h:graphicImage library="images" name="user.png" height="40px" width="40px"></h:graphicImage>    
                         </p:menuitem>
 
                         <p:menuitem>
-                             <h:outputText value="#{usuarioMB.consultar().nomeUsuario}"/>  
+                            <h:outputText value="#{usuarioMB.consultar().nomeUsuario}"/>  
                         </p:menuitem>
 
                         <p:menuitem>
-                           <h:outputText value="Pontos: #{usuarioMB.consultar().pontos}"/>   
+                            <h:outputText value="Pontos: #{usuarioMB.consultar().pontos}"/>   
                         </p:menuitem>
 
                         <f:facet name="options">
@@ -37,8 +37,8 @@
                     </p:menubar> 
                 </p:layoutUnit>
 
-                <p:layoutUnit position="center" >
-                    <ui:insert name="principal" />
+                <p:layoutUnit position="center">
+                        <ui:insert name="principal" />
                 </p:layoutUnit>
 
             </p:layout>
