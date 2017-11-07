@@ -14,7 +14,7 @@ h1{
     background: #2364AA;
 } 
 .ui-menu .ui-menuitem{
-    margin: 0px 10px;
+    margin: 20px 10px !important;
 }
 .ui-layout-unit .ui-layout-unit-content{
     padding: 0px !important;
@@ -42,13 +42,13 @@ h1{
 a:-webkit-any-link{
     text-decoration: none;
     color: white;
-    padding: 30px 15px;    
+    padding: 50px 15px !important;    
 }
 
 a:any-link{
     text-decoration: none;
     color: white;
-    padding: 30px 15px;    
+    padding: 50px 15px !important;    
 }
 
 a:-webkit-any-link:hover{
