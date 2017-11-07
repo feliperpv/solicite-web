@@ -9,6 +9,7 @@
     <ui:composition template="templateusuario.xhtml">
         <ui:define name="principal">
             <h:form>
+                <p:growl id="growl" showDetail="true"/>
                 <h1>Produtos e Serviços</h1>
                 <div>
                     <p:separator styleClass="separator-class"></p:separator>
@@ -29,7 +30,7 @@
 
                         <br></br>
 
-                        <p:commandButton value="Obter" ajax="false" action="#{usuarioMB.trocarPontos(50)}"></p:commandButton>
+                        <p:commandButton value="Obter" ajax="false" actionListener="#{usuarioMB.trocarPontos(50)}" update="growl"></p:commandButton>
                     </p:panel>
 
                     <p:panel header="Sessão de massagem" style="height: 250px; width: 300px; text-align: center" >
@@ -47,7 +48,7 @@
 
                         <br></br>
 
-                        <p:commandButton value="Obter" ajax="false" action="#{usuarioMB.trocarPontos(150)}"></p:commandButton>
+                        <p:commandButton value="Obter" ajax="false" actionListener="#{usuarioMB.trocarPontos(150)}" update="growl"></p:commandButton>
                     </p:panel>
 
                     <p:panel header="iPhone 7 Plus" style="height: 250px; width: 300px; text-align: center" >
@@ -65,7 +66,7 @@
 
                         <br></br>
 
-                        <p:commandButton value="Obter" ajax="false" action="#{usuarioMB.trocarPontos(2500)}"></p:commandButton>
+                        <p:commandButton value="Obter" ajax="false" actionListener="#{usuarioMB.trocarPontos(2500)}" update="growl"></p:commandButton>
                     </p:panel>
 
                     <p:panel header="Desconto de 20% em Sapatos" style="height: 250px; width: 300px; text-align: center" >
@@ -83,7 +84,7 @@
 
                         <br></br>
 
-                        <p:commandButton value="Obter" ajax="false" action="#{usuarioMB.trocarPontos(85)}"></p:commandButton>
+                        <p:commandButton value="Obter" ajax="false" actionListener="#{usuarioMB.trocarPontos(85)}" update="growl"></p:commandButton>
                     </p:panel>
 
                     <p:panel header="Moto G5 Plus" style="height: 250px; width: 300px; text-align: center" >
@@ -101,7 +102,7 @@
 
                         <br></br>
 
-                        <p:commandButton value="Obter" ajax="false" action="#{usuarioMB.trocarPontos(1580)}"></p:commandButton>
+                        <p:commandButton value="Obter" ajax="false" actionListener="#{usuarioMB.trocarPontos(1580)}" update="growl"></p:commandButton>
                     </p:panel>
 
                     <p:panel header="Conserto de freios" style="height: 250px; width: 300px; text-align: center" >
@@ -119,7 +120,7 @@
 
                         <br></br>
 
-                        <p:commandButton value="Obter" ajax="false" action="#{usuarioMB.trocarPontos(300)}"></p:commandButton>
+                        <p:commandButton value="Obter" ajax="false" actionListener="#{usuarioMB.trocarPontos(300)}" update="growl"></p:commandButton>
                     </p:panel>
 
                     <p:panel header="Notebook" style="height: 250px; width: 300px; text-align: center" >
@@ -137,7 +138,7 @@
 
                         <br></br>
 
-                        <p:commandButton value="Obter" ajax="false" action="#{usuarioMB.trocarPontos(3500)}"></p:commandButton>
+                        <p:commandButton value="Obter" ajax="false" actionListener="#{usuarioMB.trocarPontos(3500)}" update="growl"></p:commandButton>
                     </p:panel>
 
                     <p:panel header="Fone de Ouvido" style="height: 250px; width: 300px; text-align: center" >

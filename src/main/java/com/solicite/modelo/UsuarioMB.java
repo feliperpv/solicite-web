@@ -8,8 +8,10 @@ package com.solicite.modelo;
 import com.solicite.entidade.Usuario;
 import com.solicite.negocio.IUsuario;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import lombok.Data;
 
@@ -24,7 +26,7 @@ public class UsuarioMB {
         
     @EJB
     private IUsuario usuarioBean;
-    
+        
     public Usuario consultar(){
         return usuarioBean.consultar();
     }
@@ -32,19 +34,17 @@ public class UsuarioMB {
     public int diminutirPontos(int pontos){
         return  usuarioBean.diminuirPontos(pontos);
     }
-    
-    public boolean validarPontos(int pontos){
-        int pontosAtuais = usuarioBean.consultar().getPontos();
-        
-        return (pontosAtuais - pontos) >= 0;
 
-    }
-    
     public void trocarPontos(int pontos){
-        if(validarPontos(pontos)){
+        int pontosAtuais = usuarioBean.consultar().getPontos();
+        FacesContext context = FacesContext.getCurrentInstance();
+        
+        if((pontosAtuais - pontos) >= 0){
+            context.addMessage(null, new FacesMessage("Sucesso", "Produto adquirido!") );
             diminutirPontos(pontos);
+        } else {
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Pontos insuficientes", "Faça Solicitações!") );
         }
     }
-    
 }
 
