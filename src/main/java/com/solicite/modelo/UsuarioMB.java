@@ -40,10 +40,10 @@ public class UsuarioMB {
         FacesContext context = FacesContext.getCurrentInstance();
         
         if((pontosAtuais - pontos) >= 0){
-            context.addMessage(null, new FacesMessage("Sucesso", "Produto adquirido!") );
+            context.addMessage(null, new FacesMessage("Sucesso Produto adquirido"));
             diminutirPontos(pontos);
         } else {
-            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Pontos insuficientes", "Faça Solicitações!") );
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Pontos insuficientes. Faça Solicitações!", "") );
         }
     }
 }
