@@ -97,7 +97,7 @@ public class SolicitacaoMB {
     public void mensagemSucesso() {
         FacesContext context = FacesContext.getCurrentInstance();
          
-        context.addMessage(null, new FacesMessage("Sucesso!",  "Solicitação criada com sucesso!") );
+        context.addMessage(null, new FacesMessage("Sucesso! Solicitação criada com sucesso!") );
     }
    
     public int setFlagAtivo(Long idSolicitacao){

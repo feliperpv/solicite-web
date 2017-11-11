@@ -38,7 +38,7 @@ public class LoginMB {
             
             return "prefeitura";
         } else {            
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "ERRO!", "Usuário ou senha inválidos"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "ERRO! Usuário ou senha inválidos", ""));
             return "";
         }
     }

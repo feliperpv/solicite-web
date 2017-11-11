@@ -59,6 +59,10 @@ button.ui-state-default{
     background: #6AF296 !important;
 }
 
+.ui-growl{
+    top: 85px;
+}
+
 a:-webkit-any-link{
     text-decoration: none;
     color: white;

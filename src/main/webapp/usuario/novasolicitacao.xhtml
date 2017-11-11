@@ -10,32 +10,37 @@
         <ui:define name="principal">
 
             <h:form>
-                <p:growl id="growl" showDetail="true" sticky="true" /> 
+                <p:growl id="growl"/> 
                 <h1>Nova Solicitação</h1>
                 <p:separator styleClass="separator-class"></p:separator>
                 <div>
                     <h:panelGrid columns="2" cellpadding="10">
                         <h:outputText value="Categoria:" />
-                        <p:selectOneMenu id="cetegoriaList" value="#{solicitacaoMB.idCategoria}" style="width:300px">
+                        <p:selectOneMenu id="cetegoriaList" value="#{solicitacaoMB.idCategoria}" style="width:300px"
+                                         required="true" requiredMessage="Escolha uma Categoria.">
                             <f:selectItems value="#{solicitacaoMB.consultarCategorias()}" var="categoria" itemLabel="#{categoria.nomeCategoria}" itemValue="#{categoria.idCategoria}"></f:selectItems>
                         </p:selectOneMenu>
 
                         <h:outputText value="Estado:" />
-                        <p:selectOneMenu value="#{solicitacaoMB.idEstado}" style="width:300px">
+                        <p:selectOneMenu value="#{solicitacaoMB.idEstado}" style="width:300px"
+                                         required="true" requiredMessage="Escolha um Estado.">
                             <p:ajax listener="#{solicitacaoMB.onMudaEstado()}" update="prefeituraList" />
                             <f:selectItems value="#{solicitacaoMB.consultarEstados()}" var="estado" itemLabel="#{estado.nomeEstado}" itemValue="#{estado.idEstado}"></f:selectItems>
                         </p:selectOneMenu>
 
                         <h:outputText value="Prefeitura:" />
-                        <p:selectOneMenu id="prefeituraList" value="#{solicitacaoMB.idPrefeitura}" style="width:300px">
+                        <p:selectOneMenu id="prefeituraList" value="#{solicitacaoMB.idPrefeitura}" style="width:300px"
+                                         required="true" requiredMessage="Escolha uma Prefeitura.">
                             <f:selectItems value="#{solicitacaoMB.prefeituras}" var="prefeitura" itemLabel="#{prefeitura.nomePrefeitura}" itemValue="#{prefeitura.idPrefeitura}"></f:selectItems>
                         </p:selectOneMenu>
 
                         <h:outputText value="Endereço:" />
-                        <p:inputText id="endereco" value="#{solicitacaoMB.endereco}" style="width:400px"/>
+                        <p:inputText id="endereco"  value="#{solicitacaoMB.endereco}" style="width:400px" 
+                                     required="true" requiredMessage="Endereço não pode ser vazio."/>
 
                         <h:outputText value="Descrição:" />
-                        <p:inputTextarea id="descricao" value="#{solicitacaoMB.descricao}" queryDelay="10" minQueryLength="4" style="width:400px; height: 150px"/>
+                        <p:inputTextarea id="descricao" value="#{solicitacaoMB.descricao}" queryDelay="10" minQueryLength="4" style="width:400px; height: 150px"
+                                         required="true" requiredMessage="Descrição não pode ser vazia."/>
 
                         <p:commandButton value="Adicionar" ajax="false" action="#{solicitacaoMB.criar()}" actionListener="#{solicitacaoMB.mensagemSucesso}" update="growl"></p:commandButton>
                     </h:panelGrid>
