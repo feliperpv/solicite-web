@@ -34,8 +34,8 @@
                                 <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
                             </p:column>
                             <p:column headerText="Ações" style="width:205px">
-                                <p:commandButton value="Aceitar" ajax="false" action="#{solicitacaoMB.aceitarSolicitacao(solicitacao.idSolicitacao, 30)}" style="width:100px; background-color: lime"></p:commandButton>
-                                <p:commandButton value="Recusar" ajax="false" action="#{solicitacaoMB.setFlagRecusar(solicitacao.idSolicitacao)}" style="width:100px; background-color: red"></p:commandButton>
+                                <p:commandButton value="Aceitar" ajax="false" action="#{solicitacaoMB.aceitarSolicitacao(solicitacao.idSolicitacao, 30)}" style="width:100px;"></p:commandButton>
+                                <p:commandButton value="Recusar" ajax="false" action="#{solicitacaoMB.setFlagRecusar(solicitacao.idSolicitacao)}" style="width:100px; background-color: red !important"></p:commandButton>
                             </p:column>
                         </p:dataTable>
                     </h:form>
