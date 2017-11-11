@@ -12,13 +12,14 @@ h1{
 }
 .ui-menu, .ui-menu .ui-menu-child{
     background: #2364AA;
+    overflow-y: hidden;
+    margin: 10px;
 } 
 .ui-menu .ui-menuitem{
     margin: 20px 10px !important;
 }
 .ui-layout-unit .ui-layout-unit-content{
     padding: 0px !important;
-/*    overflow: hidden;*/
 }
 .ui-layout-unit{
     padding: 0px !important;
@@ -42,13 +43,13 @@ h1{
 a:-webkit-any-link{
     text-decoration: none;
     color: white;
-    padding: 10px 15px !important;    
+    padding: 20px 15px 30px !important   
 }
 
 a:any-link{
     text-decoration: none;
     color: white;
-    padding: 10px 15px !important;  
+    padding: 20px 15px 30px !important
 }
 
 div.tab-bar ul li a:-webkit-any-link{
