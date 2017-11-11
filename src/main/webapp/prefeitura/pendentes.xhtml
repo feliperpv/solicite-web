@@ -13,11 +13,12 @@
     </style>
     <ui:composition template="templateprefeitura.xhtml">
         <ui:define name="principal">
+            <h1>Solicitações</h1>
             <p:tabView>
                 <p:tab title="Solicitações Pendentes">
                     <h:form>
                         <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}"
-                                     paginator="true" rows="5"
+                                     paginator="true" rows="15"
                                      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
                             <p:column headerText="Código" style="width:60px; text-align: center">
@@ -43,7 +44,7 @@
                 <p:tab title="Solicitações Aceitas">
                     <h:form>
                         <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesAceitas()}"
-                                     paginator="true" rows="5"
+                                     paginator="true" rows="15"
                                      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
                             <p:column headerText="Código" style="width:60px; text-align: center">
                                 <h:outputText value="#{solicitacao.idSolicitacao}"/>
@@ -63,7 +64,7 @@
                 <p:tab title="Solicitações Recusadas">
                     <h:form>
                         <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesRecusadas()}"
-                                     paginator="true" rows="5"
+                                     paginator="true" rows="15"
                                      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
                             <p:column headerText="Código" style="width:60px; text-align: center">

@@ -42,13 +42,27 @@ h1{
 a:-webkit-any-link{
     text-decoration: none;
     color: white;
-    padding: 50px 15px !important;    
+    padding: 10px 15px !important;    
 }
 
 a:any-link{
     text-decoration: none;
     color: white;
-    padding: 50px 15px !important;    
+    padding: 10px 15px !important;  
+}
+
+div.tab-bar ul li a:-webkit-any-link{
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px !important; 
+    background-color: #EFF1ED;
+}
+
+div.tab-bar ul li a:any-link{
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px !important; 
+    background-color: #EFF1ED;
 }
 
 a:-webkit-any-link:hover{
