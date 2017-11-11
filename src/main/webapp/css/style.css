@@ -43,24 +43,36 @@ h1{
     padding: 30px 50px 0px 50px !important;
 }
 
+.ui-growl{
+    top: 85px;
+}
+
 .ui-tabs .ui-tabs-nav{
     background: white;
 }
 
-.ui-tabs .ui-tabs-nav li{
+.ui-tabs .ui-tabs-nav li, .ui-widget-header, .ui-state-default, 
+.ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
     background: #EFF1ED;
 }
 
-.ui-widget-header{
-    background: #EFF1ED;
-/*    border:*/
-}
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
-    background: #EFF1ED;
-}
-
-button.ui-state-default{
+.button-obter{
     background: #6AF296 !important;
+}
+
+.button-aceitar, .button-rejeitar{
+    width:100px;
+}
+.button-aceitar{
+    background: #6AF296 !important;
+    margin-right: 10px !important;
+    color: #4f4f4f !important;
+}
+
+.button-rejeitar{
+    background: #f23f3f !important;
+    text-shadow: none !important;
+    color: white !important;
 }
 
 .ui-growl{

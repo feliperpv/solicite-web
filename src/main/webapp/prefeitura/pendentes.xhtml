@@ -14,7 +14,7 @@
     <ui:composition template="templateprefeitura.xhtml">
         <ui:define name="principal">
             <h1>Solicitações</h1>
-            <p:tabView>
+            <p:tabView class="tab-bar">
                 <p:tab title="Solicitações Pendentes">
                     <h:form>
                         <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}"
@@ -33,9 +33,9 @@
                             <p:column headerText="Categoria">
                                 <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
                             </p:column>
-                            <p:column headerText="Ações" style="width:205px">
-                                <p:commandButton value="Aceitar" ajax="false" action="#{solicitacaoMB.aceitarSolicitacao(solicitacao.idSolicitacao, 30)}" style="width:100px;"></p:commandButton>
-                                <p:commandButton value="Recusar" ajax="false" action="#{solicitacaoMB.setFlagRecusar(solicitacao.idSolicitacao)}" style="width:100px; background-color: red !important"></p:commandButton>
+                            <p:column headerText="Ações" style="width:215px">
+                                <p:commandButton value="Aceitar" ajax="false" action="#{solicitacaoMB.aceitarSolicitacao(solicitacao.idSolicitacao, 30)}" styleClass="button-aceitar"></p:commandButton>
+                                <p:commandButton value="Recusar" ajax="false" action="#{solicitacaoMB.setFlagRecusar(solicitacao.idSolicitacao)}" styleClass="button-rejeitar"></p:commandButton>
                             </p:column>
                         </p:dataTable>
                     </h:form>
