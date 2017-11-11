@@ -13,10 +13,9 @@ h1{
 .ui-menu, .ui-menu .ui-menu-child{
     background: #2364AA;
     overflow-y: hidden;
-    margin: 10px;
 } 
 .ui-menu .ui-menuitem{
-    margin: 20px 10px !important;
+    margin: 27px 10px !important;
 }
 .ui-layout-unit .ui-layout-unit-content{
     padding: 0px !important;
@@ -40,37 +39,50 @@ h1{
     padding: 30px 50px 0px 50px !important;
 }
 
+.ui-tabs .ui-tabs-nav{
+    background: white;
+}
+
+.ui-tabs .ui-tabs-nav li{
+    background: #EFF1ED;
+}
+
+.ui-widget-header{
+    background: #EFF1ED;
+/*    border:*/
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+    background: #EFF1ED;
+}
+
+button.ui-state-default{
+    background: #6AF296 !important;
+}
+
 a:-webkit-any-link{
     text-decoration: none;
     color: white;
-    padding: 20px 15px 30px !important   
+    padding: 30px 15px 25px !important   
 }
-
 a:any-link{
     text-decoration: none;
     color: white;
-    padding: 20px 15px 30px !important
+    padding: 30px 15px 25px !important
 }
-
 div.tab-bar ul li a:-webkit-any-link{
     text-decoration: none;
     color: black;
     padding: 10px 15px !important; 
-    background-color: #EFF1ED;
 }
-
 div.tab-bar ul li a:any-link{
     text-decoration: none;
     color: black;
     padding: 10px 15px !important; 
-    background-color: #EFF1ED;
 }
-
 a:-webkit-any-link:hover{
     	color: #2364AA;
 	background: white;
 }
-
 a:any-link:hover{
     	color: #2364AA;
 	background: white;
