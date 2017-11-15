@@ -58,7 +58,7 @@ public class SolicitacaoMB {
     private IUsuario usuarioBean;
     
     public String criar(){
-        
+          
         try{
             solicitacaoBean.criar(
                     this.getEndereco(), 
@@ -66,13 +66,15 @@ public class SolicitacaoMB {
                     this.getObservacao(),
                     this.getIdPrefeitura(),
                     this.getIdCategoria());
+            
+            mensagemSucesso();
             return "criado";
         } catch (Exception e) {
             System.out.println(e);
             return "erro";
         }
     }
-    
+
     public List<Solicitacao> consultarSolicitacoes(){
         return solicitacaoBean.consultar();
     }
@@ -97,7 +99,7 @@ public class SolicitacaoMB {
     public void mensagemSucesso() {
         FacesContext context = FacesContext.getCurrentInstance();
          
-        context.addMessage(null, new FacesMessage("Sucesso! Solicitação criada com sucesso!") );
+        context.addMessage(null, new FacesMessage("Solicitação criada com sucesso!") );
     }
    
     public int setFlagAtivo(Long idSolicitacao){
