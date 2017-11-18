@@ -16,10 +16,13 @@ import javax.ejb.Local;
 @Local
 public interface ISolicitacao {
     
-    public void criar(String endereco, String descricao, String observacao, Long idCategoria, Long idPrefeitura);
-    public List<Solicitacao> consultar();
-    public List<Solicitacao> consultarAceitas();
+    public void criar(String endereco, String descricao, String observacao, Long idCategoria, Long idPrefeitura, Long idUsuario);
+    public List<Solicitacao> consultarByPrefeitura();
+    public List<Solicitacao> consultarByUsuario();
+    public List<Solicitacao> consultarAceitasByPrefeitura();
+    public List<Solicitacao> consultarAceitasByUsuario();
     public int setFlagAceitar(Long idSolicitacao);
-    public List<Solicitacao> consultarRecusadas();
+    public List<Solicitacao> consultarRecusadasByPrefeitura();
+    public List<Solicitacao> consultarRecusadasByUsuario();
     public int setFlagRecusar(Long idSolicitacao);
 }
