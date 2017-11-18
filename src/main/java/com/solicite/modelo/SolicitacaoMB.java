@@ -56,6 +56,7 @@ public class SolicitacaoMB {
     
     @EJB
     private IUsuario usuarioBean;
+    private Long idUsuario;
     
     public String criar(){
           
@@ -65,7 +66,8 @@ public class SolicitacaoMB {
                     this.getDescricao(),
                     this.getObservacao(),
                     this.getIdCategoria(),
-                    this.getIdPrefeitura());
+                    this.getIdPrefeitura(),
+                    this.getIdUsuario());
             
             mensagemSucesso();
             return "criado";
@@ -75,8 +77,12 @@ public class SolicitacaoMB {
         }
     }
 
-    public List<Solicitacao> consultarSolicitacoes(){
-        return solicitacaoBean.consultar();
+    public List<Solicitacao> consultarSolicitacoesByPrefeitura(){
+        return solicitacaoBean.consultarByPrefeitura();
+    }
+    
+    public List<Solicitacao> consultarSolicitacoesByUsuario(){
+        return solicitacaoBean.consultarByUsuario();
     }
     
     public List<Categoria> consultarCategorias() {
@@ -106,12 +112,20 @@ public class SolicitacaoMB {
         return solicitacaoBean.setFlagAceitar(idSolicitacao);
     }
     
-    public List<Solicitacao> consultarSolicitacoesAceitas(){
-        return solicitacaoBean.consultarAceitas();
+    public List<Solicitacao> consultarSolicitacoesAceitasByPrefeitura(){
+        return solicitacaoBean.consultarAceitasByPrefeitura();
+    }
+    
+    public List<Solicitacao> consultarSolicitacoesAceitasByUsuario(){
+        return solicitacaoBean.consultarAceitasByUsuario();
     }
 
-    public List<Solicitacao> consultarSolicitacoesRecusadas(){
-        return solicitacaoBean.consultarRecusadas();
+    public List<Solicitacao> consultarSolicitacoesRecusadasByPrefeitura(){
+        return solicitacaoBean.consultarRecusadasByPrefeitura();
+    }
+    
+    public List<Solicitacao> consultarSolicitacoesRecusadasByUsuario(){
+        return solicitacaoBean.consultarRecusadasByUsuario();
     }
         
     public int setFlagRecusar(Long idSolicitacao){

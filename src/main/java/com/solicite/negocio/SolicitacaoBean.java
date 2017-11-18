@@ -8,6 +8,7 @@ package com.solicite.negocio;
 import com.solicite.entidade.Solicitacao;
 import com.solicite.entidade.Categoria;
 import com.solicite.entidade.Prefeitura;
+import com.solicite.entidade.Usuario;
 import java.util.List;
 import java.util.Optional;
 import javax.ejb.EJB;
@@ -31,9 +32,12 @@ public class SolicitacaoBean implements ISolicitacao{
     
     @EJB
     private IPrefeitura prefeituraBean;
+    
+    @EJB
+    private IUsuario usuarioBean;
 
     @Override
-    public void criar(String endereco, String descricao, String observacao, Long idCategoria, Long idPrefeitura) {
+    public void criar(String endereco, String descricao, String observacao, Long idCategoria, Long idPrefeitura, Long idUsuario) {
         Prefeitura prefeitura = null;
         for (Prefeitura p: prefeituraBean.consultarPrefeituras()){
             if (p.getIdPrefeitura() == idPrefeitura)
@@ -46,19 +50,27 @@ public class SolicitacaoBean implements ISolicitacao{
                 categoria = c;
         }
         
+        Usuario usuario = usuarioBean.consultar();
+        
         Solicitacao solicitacao = new Solicitacao();
         solicitacao.setEnderecoSolicitacao(endereco);
         solicitacao.setDescricaoSolicitacao(descricao);
         solicitacao.setObservacaoSolicitacao(observacao);
         solicitacao.setPrefeitura(prefeitura);
         solicitacao.setCategoria(categoria);
+        solicitacao.setUsuario(usuario);
                              
         em.persist(solicitacao);
     }
 
     @Override
-    public List<Solicitacao> consultar() {
+    public List<Solicitacao> consultarByPrefeitura() {
          return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo IS NULL AND s.prefeitura.idPrefeitura = 1", Solicitacao.class).getResultList();
+    }
+    
+    @Override
+    public List<Solicitacao> consultarByUsuario() {
+         return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo IS NULL AND s.usuario.idUsuario = 1", Solicitacao.class).getResultList();
     }
     
     @Override
@@ -67,13 +79,23 @@ public class SolicitacaoBean implements ISolicitacao{
     }
     
     @Override
-    public List<Solicitacao> consultarAceitas(){
+    public List<Solicitacao> consultarAceitasByPrefeitura(){
         return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo = 1 AND s.prefeitura.idPrefeitura = 1", Solicitacao.class).getResultList();
     }
     
     @Override
-    public List<Solicitacao> consultarRecusadas(){
+    public List<Solicitacao> consultarAceitasByUsuario(){
+        return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo = 1 AND s.usuario.idUsuario = 1", Solicitacao.class).getResultList();
+    }
+    
+    @Override
+    public List<Solicitacao> consultarRecusadasByPrefeitura(){
         return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo = 0 AND s.prefeitura.idPrefeitura = 1", Solicitacao.class).getResultList();
+    }
+    
+    @Override
+    public List<Solicitacao> consultarRecusadasByUsuario(){
+        return em.createQuery("SELECT s FROM Solicitacao s WHERE s.flagAtivo = 0 AND s.usuario.idUsuario = 1", Solicitacao.class).getResultList();
     }
     
     @Override

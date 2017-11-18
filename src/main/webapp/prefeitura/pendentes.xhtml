@@ -17,7 +17,7 @@
             <p:tabView class="tab-bar">
                 <p:tab title="Solicitações Pendentes">
                     <h:form>
-                        <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoes()}"
+                        <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesByPrefeitura()}"
                                      paginator="true" rows="15"
                                      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
@@ -43,7 +43,7 @@
 
                 <p:tab title="Solicitações Aceitas">
                     <h:form>
-                        <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesAceitas()}"
+                        <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesAceitasByPrefeitura()}"
                                      paginator="true" rows="15"
                                      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
                             <p:column headerText="Código" style="width:60px; text-align: center">
@@ -63,7 +63,7 @@
                 </p:tab>
                 <p:tab title="Solicitações Recusadas">
                     <h:form>
-                        <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesRecusadas()}"
+                        <p:dataTable var="solicitacao" value="#{solicitacaoMB.consultarSolicitacoesRecusadasByPrefeitura()}"
                                      paginator="true" rows="15"
                                      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
