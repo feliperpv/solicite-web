@@ -13,21 +13,21 @@
                 <p:growl id="growl"/> 
                 <h1>Nova Solicitação</h1>
                 <p:separator styleClass="separator-class"></p:separator>
-                <div>
+                <div style="">
                     <h:panelGrid columns="2" cellpadding="10">
                         <h:outputText value="Categoria:" />
-                        <p:selectOneMenu id="categoriaList" value="#{solicitacaoMB.idCategoria}" style="width:300px">
+                        <p:selectOneMenu id="categoriaList" value="#{solicitacaoMB.idCategoria}" style="width:400px">
                             <f:selectItems value="#{solicitacaoMB.consultarCategorias()}" var="categoria" itemLabel="#{categoria.nomeCategoria}" itemValue="#{categoria.idCategoria}"></f:selectItems>
                         </p:selectOneMenu>
 
                         <h:outputText value="Estado:" />
-                        <p:selectOneMenu value="#{solicitacaoMB.idEstado}" style="width:300px">
+                        <p:selectOneMenu value="#{solicitacaoMB.idEstado}" style="width:400px">
                             <p:ajax listener="#{solicitacaoMB.onMudaEstado()}" update="prefeituraList" />
                             <f:selectItems value="#{solicitacaoMB.consultarEstados()}" var="estado" itemLabel="#{estado.nomeEstado}" itemValue="#{estado.idEstado}"></f:selectItems>
                         </p:selectOneMenu>
 
                         <h:outputText value="Prefeitura:" />
-                        <p:selectOneMenu id="prefeituraList" value="#{solicitacaoMB.idPrefeitura}" style="width:300px">
+                        <p:selectOneMenu id="prefeituraList" value="#{solicitacaoMB.idPrefeitura}" style="width:400px">
                             <f:selectItems value="#{solicitacaoMB.prefeituras}" var="prefeitura" itemLabel="#{prefeitura.nomePrefeitura}" itemValue="#{prefeitura.idPrefeitura}"></f:selectItems>
                         </p:selectOneMenu>
 
