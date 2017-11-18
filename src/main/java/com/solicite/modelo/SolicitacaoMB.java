@@ -64,8 +64,8 @@ public class SolicitacaoMB {
                     this.getEndereco(), 
                     this.getDescricao(),
                     this.getObservacao(),
-                    this.getIdPrefeitura(),
-                    this.getIdCategoria());
+                    this.getIdCategoria(),
+                    this.getIdPrefeitura());
             
             mensagemSucesso();
             return "criado";
