@@ -16,17 +16,20 @@
                                      paginator="true" rows="15"
                                      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
-                            <p:column headerText="Código" style="width:60px; text-align: center">
+                            <p:column headerText="Código" style="width:5%; text-align: center">
                                 <h:outputText value="#{solicitacao.idSolicitacao}"/>
                             </p:column>
-                            <p:column headerText="Descrição">
+                            <p:column headerText="Descrição" style="width:30%;">
                                 <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
                             </p:column>
-                            <p:column headerText="Endereço">
+                            <p:column headerText="Endereço" style="width:22%;">
                                 <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
                             </p:column>
-                            <p:column headerText="Categoria">
+                            <p:column headerText="Categoria" style="width:15%;">
                                 <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
+                            </p:column>
+                            <p:column headerText="Cidade" style="width:27%;">
+                                <h:outputText value="#{solicitacao.prefeitura.nomePrefeitura}" />
                             </p:column>
                         </p:dataTable>
                     </h:form>
@@ -38,17 +41,20 @@
                                      paginator="true" rows="15"
                                      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
-                            <p:column headerText="Código" style="width:60px; text-align: center">
+                            <p:column headerText="Código" style="width:5%; text-align: center">
                                 <h:outputText value="#{solicitacao.idSolicitacao}"/>
                             </p:column>
-                            <p:column headerText="Descrição">
+                            <p:column headerText="Descrição" style="width:30%;">
                                 <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
                             </p:column>
-                            <p:column headerText="Endereço">
+                            <p:column headerText="Endereço" style="width:22%;">
                                 <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
                             </p:column>
-                            <p:column headerText="Categoria">
+                            <p:column headerText="Categoria" style="width:15%;">
                                 <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
+                            </p:column>
+                            <p:column headerText="Cidade" style="width:27%;">
+                                <h:outputText value="#{solicitacao.prefeitura.nomePrefeitura}" />
                             </p:column>
                         </p:dataTable>
                     </h:form>
@@ -60,17 +66,20 @@
                                      paginator="true" rows="15"
                                      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
-                            <p:column headerText="Código" style="width:60px; text-align: center">
+                            <p:column headerText="Código" style="width:5%; text-align: center">
                                 <h:outputText value="#{solicitacao.idSolicitacao}"/>
                             </p:column>
-                            <p:column headerText="Descrição">
+                            <p:column headerText="Descrição" style="width:30%;">
                                 <h:outputText value="#{solicitacao.descricaoSolicitacao}" />
                             </p:column>
-                            <p:column headerText="Endereço">
+                            <p:column headerText="Endereço" style="width:22%;">
                                 <h:outputText value="#{solicitacao.enderecoSolicitacao}" />
                             </p:column>
-                            <p:column headerText="Categoria">
+                            <p:column headerText="Categoria" style="width:15%;">
                                 <h:outputText value="#{solicitacao.categoria.nomeCategoria}" />
+                            </p:column>
+                            <p:column headerText="Cidade" style="width:27%;">
+                                <h:outputText value="#{solicitacao.prefeitura.nomePrefeitura}" />
                             </p:column>
                         </p:dataTable>
                     </h:form>
